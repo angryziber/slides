@@ -139,6 +139,7 @@
 	<section>
 		<h2>Reactive programming</h2>
 		<p>Angular, Knockout, etc</p>
+		<p>input -> work -> output -> repeat</p>
 	</section>
 </section>
 
@@ -183,15 +184,32 @@ $("#ires").shouldBe(visible);
 </section>
 
 <section>
-	<h2>Nulls</h2>
-	<p>Probably, one of the mistakes of Java, inherited from C++ and others</p>
-	<ul>
-		<li>Scala: Option</li>
-		<li>Groovy: ?.</li>
-		<li>Objective-C / Smalltalk: no NPEs!</li>
-		<li>Java 8 & Guava: Optional</li>
-		<li>..and @Nullable + @Nonnull</li>
-	</ul>
+	<section>
+		<h2>Nulls</h2>
+		<p>Probably, one of the mistakes of Java</p>
+		<p>inherited from C++ and others</p>
+	</section>
+
+	<section>
+		<ul>
+			<li>Scala: Option</li>
+			<li>Groovy: ?.</li>
+			<li>Objective-C / Smalltalk: no NPEs!</li>
+			<li>Java 8 & Guava: Optional</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>How Java devs fight nulls?</h2>
+		<pre class="fragment"><code data-trim>"hello".equals("world")</code></pre>
+		<pre class="fragment"><code data-trim>java.util.Objects @since 1.7</code></pre>
+		<p class="fragment">Guava Objects/MoreObjects/Strings</p>
+		<pre class="fragment"><code data-trim>firstNonNull(s, "x")</code></pre>
+		<pre class="fragment"><code data-trim>isNullOrEmpty(s)</code></pre>
+		<p class="fragment">Java 8 / Guava: Optional</p>
+		<pre class="fragment"><code data-trim>Optional.of("hello").orElse("x")</code></pre>
+		<p class="fragment">@Nullable + @Nonnull</p>
+	</section>
 </section>
 
 <section>
