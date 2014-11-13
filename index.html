@@ -185,18 +185,21 @@ $("#ires").shouldBe(visible);
 
 <section>
 	<section>
-		<h2>Nulls</h2>
+		<h1>Nulls</h1>
 		<p>Probably, one of the mistakes of Java</p>
 		<p>inherited from C++ and others</p>
+		<p class="strong fragment">
+			<span class="larger">&#9760;</span> NullPointerException <span class="larger">&#9760;</span>
+		</p>
 	</section>
 
 	<section>
-		<ul>
-			<li>Scala: Option</li>
-			<li>Groovy: ?.</li>
-			<li>Objective-C / Smalltalk: no NPEs!</li>
-			<li>Java 8 & Guava: Optional</li>
-		</ul>
+		<h2>How others fare?</h2>
+		<p class="fragment">Objective-C: no NPEs!</p>
+		<p class="fragment">Scala: Option</p>
+		<p class="fragment">Groovy: ?: and ?. to avoid NPE</p>
+		<p class="fragment">Vala/Kotlin: ? to mark nullables</p>
+		<p class="fragment">SQL is particularly bad</p>
 	</section>
 
 	<section>

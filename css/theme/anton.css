@@ -144,3 +144,7 @@ body {
 .reveal pre code {
   padding: 10px;
 }
+
+.reveal .larger {
+  font-size: 150%;
+}
