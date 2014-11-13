@@ -140,3 +140,7 @@ body {
  *********************************************/
 .reveal .slide-number {
   color: #13daec; }
+
+.reveal pre code {
+  padding: 10px;
+}
