@@ -148,3 +148,11 @@ body {
 .reveal .larger {
   font-size: 150%;
 }
+
+.reveal .slides section .fragment.strike-through {
+  opacity: 1;
+}
+
+.reveal .slides section .fragment.strike-through.visible {
+  text-decoration: line-through ;
+}
