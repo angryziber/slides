@@ -113,36 +113,90 @@
 </section>
 
 <section>
-	<h2 class="strong">Functional programming</h2>
-	<h3 class="fragment">Why make programming even harder?</h3>
-	<br>
-	<blockquote class="fragment">Program some Java - your C++ will improve</blockquote>
-	<br>
-	<blockquote class="fragment">Program some X - your Java will improve</blockquote>
-</section>
+	<section>
+		<h2 class="strong">Functional programming</h2>
+		<h3 class="fragment">Why make programming even harder?</h3>
+		<br>
+		<blockquote class="fragment">Program some Java - your C++ will improve</blockquote>
+		<br>
+		<blockquote class="fragment">Program some X - your Java will improve</blockquote>
+	</section>
 
-<section>
-	<h2 class="strong">Functional programming</h2>
-	<h3 class="fragment">Look around!</h3>
-	<br>
-	<p class="fragment">First in academics</p>
-	<br>
-	<p class="fragment">JavaScript</p>
-</section>
+	<section>
+		<h2 class="strong">Functional programming</h2>
+		<h3 class="fragment">Look around!</h3>
+		<br>
+		<p class="fragment">First in academics</p>
+		<br>
+		<p class="fragment">Now even in JavaScript :-)</p>
+	</section>
 
-<section>
-	<h2>What's good for your code?</h2>
-	<p>side-effect free</p>
-	<p>stateless</p>
-	<p>immutable</p>
-</section>
+	<section>
+		<h2>What's good for your code?</h2>
+		<p>side-effect free</p>
+		<p>stateless</p>
+		<p>immutable</p>
+	</section>
 
-<section>
-	<h2>Reasons</h2>
-	<p>less code -> readability, productivity</p>
-	<p>fewer bugs</p>
-	<p>more work to the compiler</p>
-	<p>implicit concurrency and the likes</p>
+	<section>
+		<h2>Reasons</h2>
+		<p>less code -> readability, productivity</p>
+		<p>fewer bugs</p>
+		<p>more work to the compiler</p>
+		<p>implicit concurrency and the likes</p>
+	</section>
+
+	<section>
+		<h2>Collections</h2>
+		<p>Transformations</p>
+		<p>Lazy -> Guava</p>
+		<p>Chaining</p>
+	</section>
+
+	<section>
+		<h2>Iterations</h2>
+		<p>jQuery implicit iterations, Groovy operates on collections</p>
+		<p>3 Lispy workhorses: map, reduce, and filter</p>
+	</section>
+
+	<section>
+		<h2>Data</h2>
+		<p class="strong">vs</p>
+		<h2>Objects</h2>
+		<p>Clojure: data is more important than representation</p>
+		<p>Represent computation, not the world</p>
+		<p>Tuple in java: asList() - convenient, semi-immutable and can contain heterogeneous items</p>
+		<p>Breaking data into objects is often arbitrary</p>
+	</section>
+
+	<section>
+		<h2>Functions</h2>
+		<ul>
+			<li>Utility functions -> static imports (but not static state)</li>
+			<li>Function composition -> delegate, composite? -> reuse through composition</li>
+			<li>Guava's Function and Predicate</li>
+			<li>Method references in Java 8</li>
+			<li>But no dynamic generation without bytecode manipulation</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>Memoization</h2>
+		<p>Caching, Guice</p>
+	</section>
+
+	<section>
+		<h2>Stateless</h2>
+		<p>Play framework sessions</p>
+		<p>Testing</p>
+		<p>Side-effect free</p>
+	</section>
+
+	<section>
+		<h2>Immutables</h2>
+		<p>are everywhere in Java API since 1.0</p>
+		<p>what about your classes?</p>
+	</section>
 </section>
 
 <section>
@@ -156,17 +210,13 @@
 		<p>Not needed if there is no shared state</p>
 		<p>Bonus: easy to test</p>
 	</section>
-</section>
 
-<section>
-	<h2>Memoization</h2>
-	<p>Caching, Guice</p>
-</section>
-
-<section>
-	<h2>Iterations</h2>
-	<p>jQuery implicit iterations, Groovy operates on collections</p>
-	<p>3 Lispy workhorses: map, reduce, and filter</p>
+	<section>
+		<h2>Dart isolates</h2>
+		<p>Clojure agents</p>
+		<p>Scala/Akka actors</p>
+		<p>Erlang processes</p>
+	</section>
 </section>
 
 <section>
@@ -228,30 +278,6 @@ $("[name=q]").val("Hello").pressEnter();
 $("#ires").shouldBe(visible);
 		</code></pre>
 	</section>
-</section>
-
-<section>
-	<h2>Functions</h2>
-	<ul>
-		<li>Utility functions -> static imports (but not static state)</li>
-		<li>Function composition -> delegate, composite? -> reuse through composition</li>
-		<li>Guava's Function and Predicate</li>
-		<li>Method references in Java 8</li>
-		<li>But no dynamic generation without bytecode manipulation</li>
-	</ul>
-</section>
-
-<section>
-	<h2>Stateless</h2>
-	<p>Play framework sessions</p>
-	<p>Testing</p>
-	<p>Side-effect free</p>
-</section>
-
-<section>
-	<h2>Immutables</h2>
-	<p>are everywhere in Java API since 1.0</p>
-	<p>what about your classes?</p>
 </section>
 
 <section>
@@ -351,23 +377,6 @@ class SuperSomething implements Something {
 </section>
 
 <section>
-	<h2>Collections</h2>
-	<p>Transformations</p>
-	<p>Lazy -> Guava</p>
-	<p>Chaining</p>
-</section>
-
-<section>
-	<h2>Data</h2>
-	<p class="strong">vs</p>
-	<h2>Objects</h2>
-	<p>Clojure: data is more important than representation</p>
-	<p>Represent computation, not the world</p>
-	<p>Tuple in java: asList() - convenient, semi-immutable and can contain heterogeneous items</p>
-	<p>Breaking data into objects is often arbitrary</p>
-</section>
-
-<section>
 	<section>
 		<h2>Dynamic</h2>
 		<p class="strong">vs</p>
@@ -429,13 +438,6 @@ class SuperSomething implements Something {
 	<p>Iterables, Maps, Predicates, Functions, Ordering</p>
 	<p>New collections: Multimap, BiMap, Table, Immutable*</p>
 	<p>Promotes immutable collections</p>
-</section>
-
-<section>
-	<h2>Dart isolates</h2>
-	<p>Clojure agents</p>
-	<p>Scala/Akka actors</p>
-	<p>Erlang processes</p>
 </section>
 
 <section>
