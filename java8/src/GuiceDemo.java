@@ -1,13 +1,12 @@
-import com.google.common.cache.Cache;
 import com.google.inject.AbstractModule;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
-import com.google.inject.matcher.Matchers;
-import com.sun.xml.internal.bind.v2.runtime.reflect.opt.MethodAccessor_Integer;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
+import static com.google.inject.matcher.Matchers.annotatedWith;
+import static com.google.inject.matcher.Matchers.any;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 public class GuiceDemo {
@@ -18,7 +17,7 @@ public class GuiceDemo {
     class X extends AbstractModule {
       @Override
       protected void configure() {
-        bindInterceptor(Matchers.any(), Matchers.annotatedWith(Cache.class));
+        bindInterceptor(any(), annotatedWith(Cache.class), invocation -> null);
       }
     }
 
