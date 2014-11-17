@@ -16,7 +16,7 @@ public class GuavaDemo {
   public static void main(String[] args) {
     List<String> list = asList("a1", "b2", "c3");
     out.println(
-        filter(list, or(containsPattern("b"), containsPattern("3")))
+        Iterables.filter(list, Predicates.or(Predicates.containsPattern("b"), Predicates.containsPattern("3")))
     );
   }
 }

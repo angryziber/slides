@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/java7/java7.iml" filepath="$PROJECT_DIR$/java7/java7.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java8/java8.iml" filepath="$PROJECT_DIR$/java8/java8.iml" />
       <module fileurl="file://$PROJECT_DIR$/reveal.iml" filepath="$PROJECT_DIR$/reveal.iml" />
     </modules>
   </component>

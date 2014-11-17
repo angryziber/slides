@@ -72,9 +72,9 @@
 <section>
 	<section>
 		<h2>OOP is <span class="fragment strike-through">dead</span><span class="fragment strong">dying</span></h2>
-		<p class="fragment">40+ years old and still not solved</p>
-		<p class="fragment">"Modeling-driven" programming</p>
-		<p class="fragment">But how often your classes model real-world stuff?</p>
+		<p class="fragment">40+ years old and still has problems</p>
+		<p class="fragment">"Modeling-driven" <programmi></programmi>ng</p>
+		<p class="fragment">How often do your classes model real-world stuff?</p>
 		<!-- Source: http://kawagner.blogspot.com/2006/08/oop-is-dead.html -->
 	</section>
 
@@ -94,13 +94,11 @@
 
 	<section>
 		<h3>Mutable state</h3>
-		<p>Extra parameter, used for function dispatch</p>
-		<p>Pattern matching - more powerful concept</p>
 	</section>
 
 	<section>
 		<p>People use less OOP features in langs like Java</p>
-		<p>Code resuse is hard in OOP</p>
+		<p>Code reuse is hard in OOP</p>
 		<p>E.g. AOP tries to solve that</p>
 		<p>SOA = going back to procedures</p>
 	</section>
@@ -288,9 +286,16 @@ $("#ires").shouldBe(visible);
 </section>
 
 <section>
-	<h2>AOP</h2>
-	<p>Not so bad, after all</p>
-	<p>Guice example</p>
+	<h2>Guice example</h2>
+	<p>AOP is not so bad</p>
+	<p>Dependency injection - dynamic programming</p>
+	<p>Simplifies building object graphs, loose coupling</p>
+	<p>Dependencies are resolved at run-time</p>
+	<p>Functional?</p>
+	<p>Injector can do high-level optimizations</p>
+	<p>Injector is free to decide on best way to create objects - memoization (caching), pooling, reordering and parallelizing work when creating dependencies</p>
+	<p>Meaning there shouldn't be side effects on creation</p>
+	<!-- https://medium.com/easy-pieces-for-programmers/how-to-trick-oo-programmers-into-loving-functional-programming-7019e1bf9bba -->
 </section>
 
 <section>
