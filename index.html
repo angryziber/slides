@@ -287,16 +287,67 @@ $("#ires").shouldBe(visible);
 </section>
 
 <section>
-	<h2>Guice example</h2>
-	<p>AOP is not so bad</p>
-	<p>Dependency injection - dynamic programming</p>
-	<p>Simplifies building object graphs, loose coupling</p>
-	<p>Dependencies are resolved at run-time</p>
-	<p>Functional?</p>
-	<p>Injector can do high-level optimizations</p>
-	<p>Injector is free to decide on best way to create objects - memoization (caching), pooling, reordering and parallelizing work when creating dependencies</p>
-	<p>Meaning there shouldn't be side effects on creation</p>
-	<!-- https://medium.com/easy-pieces-for-programmers/how-to-trick-oo-programmers-into-loving-functional-programming-7019e1bf9bba -->
+	<section>
+		<h2>Dependency Injection</h2>
+		<p class="fragment">Comes to the rescue...</p>
+		<p class="fragment">...when OOP gets messy</p>
+	</section>
+
+	<section>
+		<h2>Dependency Injection</h2>
+		<p>...is dynamic programming</p>
+		<br>
+		<p class="fragment">Simplifies building object graphs -> loose coupling</p>
+		<p class="fragment">Dependencies are resolved at run-time</p>
+	</section>
+
+	<section>
+		<h2>Dependency Injection</h2>
+		<p>...is also functional?</p>
+		<br>
+		<p class="fragment">Injector can do high-level optimizations</p>
+		<p class="fragment">Injector is free to decide on best way to create objects - memoization (caching), pooling, reordering and parallelizing work when creating dependencies</p>
+		<p class="fragment">Meaning there shouldn't be side effects on creation</p>
+		<!-- https://medium.com/easy-pieces-for-programmers/how-to-trick-oo-programmers-into-loving-functional-programming-7019e1bf9bba -->
+	</section>
+
+	<section>
+		<h2>Guice</h2>
+
+		<p class="fragment">Declarative code for configuration</p>
+		<pre class="fragment"><code data-trim class="java">
+			bind(Something.class).to(SuperSomething.class);
+		</code></pre>
+
+		<p class="fragment">Bootstrap</p>
+		<pre class="fragment"><code data-trim class="java">
+Injector injector = Guice.createInjector(new MyModule());
+Something s = injector.getProvider(Something.class).get();
+		</code></pre>
+
+		<p class="fragment">Use</p>
+		<pre class="fragment"><code data-trim class="java">
+class SuperSomething implements Something {
+  @Inject AnotherThing another;
+}
+		</code></pre>
+
+		<p class="fragment">Makes AOP look not so bad</p>
+		<pre class="fragment"><code data-trim class="java">
+			bindInterceptor(any(), annotatedWith(Cache.class), invocation -> ...);
+		</code></pre>
+	</section>
+
+	<section>
+		<h2>AOP</h2>
+		<p>Aspect-Oriented Programming</p>
+		<br>
+		<p class="fragment">Much hyped in mid-2000s</p>
+		<p class="fragment">Crazy terminology, disastrous implementations</p>
+		<p class="fragment">Actually means wrapping of methods <i>(advices)</i></p>
+		<p class="fragment">for Caching, Logging, etc</p>
+		<p class="fragment strong">i.e. keeping code cleaner</p>
+	</section>
 </section>
 
 <section>
@@ -402,6 +453,10 @@ $("#ires").shouldBe(visible);
 
 <section>
 	<h1>Simplicity</h1>
+	<h1>Clean code</h1>
+	<p>Easy to read</p>
+	<p>Easy to write</p>
+	<p>(fewer bug possibilities)</p>
 	<p>Easy to compile</p>
 	<p>Easy to run</p>
 	<!-- http://www.lispcast.com/java-learn-from-clojure -->
