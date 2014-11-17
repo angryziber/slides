@@ -269,23 +269,30 @@
 	</section>
 
 	<section>
-		<h2>JQuery</h2>
-		<p>What does it do well?</p>
-		<p>Short, simple syntax</p>
-		<p>Everything is a collection</p>
-		<p>Implicit iterations</p>
-		<p>Chaining</p>
+		<h2>What does it do well?</h2>
+		<p class="fragment">Short, simple syntax</p>
+		<pre class="fragment"><code class="javascript">$('#hello').val('world')</code></pre>
+		<p class="fragment">Everything is a collection</p>
+		<p class="fragment">Implicit iterations</p>
+		<p class="fragment">Chaining</p>
+		<pre class="fragment"><code>$('a').parent().addClass('nice').end().on('click', ...)</code></pre>
 	</section>
 
 	<section>
 		<h2>In Java?</h2>
 		<p><a href="http://selenide.org">Selenide</a></p>
-		<p>UI Testing Framework</p>
-		<pre><code data-trim>
+		<p class="fragment">UI Testing Framework</p>
+		<pre class="fragment"><code data-trim>
 open("http://www.google.ee/");
 $("[name=q]").val("Hello").pressEnter();
 $("#ires").shouldBe(visible);
 		</code></pre>
+		<br>
+		<p class="fragment">or the first-ever chaining class</p>
+		<pre class="fragment"><code class="html" data-trim>
+			new StringBuffer().append("Hello").append(' ').append("World").toString()</code>
+		</pre>
+		<p class="fragment">and any other <span class="strong">Builder</span></p>
 	</section>
 </section>
 
