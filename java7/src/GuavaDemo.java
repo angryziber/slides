@@ -1,3 +1,4 @@
+import com.google.common.base.Predicate;
 import com.google.common.base.Predicates;
 import com.google.common.collect.Iterables;
 
@@ -16,7 +17,13 @@ public class GuavaDemo {
   public static void main(String[] args) {
     List<String> list = asList("a1", "b2", "c3");
     out.println(
-        Iterables.filter(list, Predicates.or(Predicates.containsPattern("b"), Predicates.containsPattern("3")))
+        filter(list, Predicates.or(Predicates.containsPattern("b"), Predicates.containsPattern("3")))
     );
+
+    out.println(filter(list, new Predicate<String>() {
+      @Override public boolean apply(String s) {
+        return s.startsWith("b");
+      }
+    }));
   }
 }
