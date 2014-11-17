@@ -137,9 +137,12 @@
 
 	<section>
 		<h2>Its good for your code</h2>
+		<br>
 		<p>immutable</p>
 		<p>stateless</p>
 		<p>side-effect free</p>
+		<br>
+		<h2 class="fragment strong">⬆ Functions ⬆</h2>
 	</section>
 
 	<section>
@@ -147,9 +150,44 @@
 		<p>less code -> readability, productivity</p>
 		<p>fewer bugs</p>
 		<p>more work to the compiler</p>
-		<p>implicit parallelism</p>
+		<p>implicit optimizations: parallelism, memoization, ...</p>
 	</section>
 
+	<section>
+		<h2><span class="strong">Functions</span> in Java</h2>
+		<p class="fragment">Utility functions ⇒ static imports (but not static state)</p>
+		<pre class="fragment"><code>unmodifiableList(asList(1, 2, 3));</code></pre>
+		<p class="fragment">Function composition ⇒ delegate, composite?</p>
+		<p class="fragment">⇒ reuse through composition</p>
+		<p class="fragment">Guava: Function and Predicate</p>
+		<p class="fragment">Java 8: <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html"><code>java.util.function.*</code></a> and Method references</p>
+		<!--<p>But no dynamic generation without bytecode manipulation</p>-->
+	</section>
+
+	<section>
+		<h2>Stateless</h2>
+		<p>Play framework sessions</p>
+		<p>Testing</p>
+	</section>
+
+	<section>
+		<h2>Data</h2>
+		<p class="strong">vs</p>
+		<h2>Objects</h2>
+		<p class="fragment">Clojure: data is more important than representation</p>
+		<p class="fragment">Represent computation, not the world</p>
+		<p class="fragment">Tuple in java: asList() - convenient, semi-immutable and can contain heterogeneous items</p>
+		<p class="fragment">Breaking data into objects is often arbitrary</p>
+	</section>
+
+	<section>
+		<h2>Immutables</h2>
+		<p>are everywhere in Java API since 1.0</p>
+		<p>what about your classes?</p>
+	</section>
+</section>
+
+<section>
 	<section>
 		<h2>Collections</h2>
 		<p>Transformations</p>
@@ -162,51 +200,13 @@
 		<p>jQuery implicit iterations, Groovy operates on collections</p>
 		<p>3 Lispy workhorses: map, reduce, and filter</p>
 	</section>
-
-	<section>
-		<h2>Data</h2>
-		<p class="strong">vs</p>
-		<h2>Objects</h2>
-		<p>Clojure: data is more important than representation</p>
-		<p>Represent computation, not the world</p>
-		<p>Tuple in java: asList() - convenient, semi-immutable and can contain heterogeneous items</p>
-		<p>Breaking data into objects is often arbitrary</p>
-	</section>
-
-	<section>
-		<h2>Functions</h2>
-		<ul>
-			<li>Utility functions -> static imports (but not static state)</li>
-			<li>Function composition -> delegate, composite? -> reuse through composition</li>
-			<li>Guava's Function and Predicate</li>
-			<li>Method references in Java 8</li>
-			<li>But no dynamic generation without bytecode manipulation</li>
-		</ul>
-	</section>
-
-	<section>
-		<h2>Memoization</h2>
-		<p>Caching, Guice</p>
-	</section>
-
-	<section>
-		<h2>Stateless</h2>
-		<p>Play framework sessions</p>
-		<p>Testing</p>
-		<p>Side-effect free</p>
-	</section>
-
-	<section>
-		<h2>Immutables</h2>
-		<p>are everywhere in Java API since 1.0</p>
-		<p>what about your classes?</p>
-	</section>
 </section>
 
 <section>
 	<section>
-		<h2>Concurrency</h2>
 		<h2>Parallelism</h2>
+		<h3>Concurrency</h3>
+		<h4>Multithreading</h4>
 	</section>
 
 	<section>
@@ -216,10 +216,15 @@
 	</section>
 
 	<section>
-		<h2>Dart isolates</h2>
-		<p>Clojure agents</p>
-		<p>Scala/Akka actors</p>
-		<p>Erlang processes</p>
+		<p class="fragment"><span class="strong">Clojure:</span> agents</p>
+		<p class="fragment	"><span class="strong">Scala/Akka:</span> actors</p>
+		<p class="fragment"><span class="strong">Erlang:</span> processes</p>
+		<p class="fragment"><span class="strong">Dart:</span> isolates</p>
+		<br>
+		<p class="fragment">⇒ no shared data</p>
+		<p class="fragment">⇒ message passing</p>
+		<br>
+		<p class="fragment"><span class="strong">JavaScript:</span> no concurrency (async)</p>
 	</section>
 </section>
 
