@@ -82,33 +82,37 @@
 	<section>
 		<h2>OOP quotes</h2>
 		<br>
-		<blockquote>
+		<blockquote class="fragment">
 			“I don't think object-oriented programming is a structuring paradigm that meets my standards of elegance.” – <span class="strong">Edsger Dijkstra</span>
 		</blockquote>
 		<br>
-		<blockquote>
+		<blockquote class="fragment">
 			<span style="opacity: 0.5">“The problem with object-oriented languages is they’ve got all this implicit environment that they carry around with them.</span>
 			You wanted a banana but what you got was a gorilla holding the banana and the entire jungle.” – <span class="strong">Joe Armstrong</span>
 		</blockquote>
 	</section>
 
 	<section>
-		<h3>Specialty of 'this'</h3>
-		<p>Extra parameter, used for function dispatch</p>
-		<p>Pattern matching - more powerful concept</p>
-		<p>Reuse of whole classes instead of smaller functions</p>
+		<h2>Specialty of <span class="strong">this</span></h2>
+		<p class="fragment">Extra parameter, used for function dispatch</p>
+		<p class="fragment">Pattern matching - more powerful concept</p>
+		<p class="fragment">Reuse of whole classes instead of smaller functions</p>
 	</section>
 
 	<section>
-		<h3>Mutable state</h3>
+		<h2>Mutable state</h2>
+		<p class="fragment">Unsafe to return</p>
+		<p class="fragment">No caching</p>
+		<p class="fragment">No sharing</p>
+		<p class="fragment">Concurrency issues</p>
 	</section>
 
 	<section>
-		<h3>Nowadays</h3>
-		<p>People use less OOP features in langs like Java</p>
-		<p>Code reuse is hard in OOP</p>
-		<p>E.g. AOP tries to solve that</p>
-		<p>SOA = going back to procedures</p>
+		<h2>Nowadays</h2>
+		<p class="fragment">People use less OOP features in langs like Java</p>
+		<p class="fragment">Code reuse is hard in OOP</p>
+		<p class="fragment">E.g. <a title="Dependency Injection" href="#/di">DI</a> & <a title="Aspect-Oriented Programming" href="#/aop">AOP</a> try to solve that</p>
+		<p class="fragment"><span class="strong">SOA</span> = going back to procedures ;-)</p>
 	</section>
 
 	<section>
@@ -357,7 +361,7 @@ $("#ires").shouldBe(visible);
 </section>
 
 <section>
-	<section>
+	<section id="di">
 		<h2>Dependency Injection</h2>
 		<p class="fragment">Comes to the rescue...</p>
 		<p class="fragment">...when OOP gets messy</p>
@@ -411,7 +415,7 @@ class SuperSomething implements Something {
 		</code></pre>
 	</section>
 
-	<section>
+	<section id="aop">
 		<h2>AOP</h2>
 		<p>Aspect-Oriented Programming</p>
 		<br>
