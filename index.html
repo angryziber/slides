@@ -361,7 +361,7 @@ $("#ires").shouldBe(visible);
 		<p class="fragment">Comes to the rescue...</p>
 		<p class="fragment">...when OOP gets messy</p>
 		<br>
-		<p class="fragment">Simplifies building object graphs -> loose coupling</p>
+		<p class="fragment">Simplifies building object graphs ⇒ loose coupling</p>
 		<p class="fragment">Dependencies are resolved at run-time</p>
 	</section>
 
@@ -376,6 +376,7 @@ $("#ires").shouldBe(visible);
 		<br>
 		<p class="fragment">Injector can do high-level optimizations</p>
 		<p class="fragment">...free to decide the best way to create objects</p>
+		<br>
 		<p class="fragment">⇒ memoization (caching), pooling, reordering and parallelizing</p>
 		<p class="fragment">⇒ should be no side effects in constructors</p>
 		<br>
@@ -391,7 +392,7 @@ $("#ires").shouldBe(visible);
 		</code></pre>
 
 		<p class="fragment">Bootstrap</p>
-		<pre class="fragment"><code data-trim class="java">
+		<pre class="fragment"><code data-trim>
 Injector injector = Guice.createInjector(new MyModule());
 Something s = injector.getProvider(Something.class).get();
 		</code></pre>
