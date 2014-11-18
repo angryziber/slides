@@ -143,6 +143,7 @@ body {
 
 .reveal pre code {
   padding: 10px;
+  font-size: 120%;
 }
 
 .reveal .larger {
