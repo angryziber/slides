@@ -315,20 +315,20 @@ $("#ires").shouldBe(visible);
 	<section>
 		<h2>How others fare?</h2>
 
-		<p class="fragment"><span class="strong">Objective-C:</span> no NPEs when sending messages!</p>
+		<p class="fragment left"><span class="strong">Objective-C:</span> no NPEs when sending messages!</p>
 		<pre class="fragment"><code data-trim>[greeter sayHelloTo:@"World" and:@"Universum"];</code></pre>
 
-		<p class="fragment"><span class="strong">Groovy:</span> <code>?:</code> and <code>?.</code> to avoid NPE</p>
+		<p class="fragment left"><span class="strong">Groovy:</span> <code>?:</code> and <code>?.</code> to avoid NPE</p>
 		<pre class="fragment"><code data-trim>greeter?.sayHelloTo(world ?: "World")</code></pre>
 
-		<p class="fragment"><span class="strong">Vala & Kotlin:</span> ? to mark nullables</p>
+		<p class="fragment left"><span class="strong">Vala & Kotlin:</span> ? to mark nullables</p>
 		<pre class="fragment"><code data-trim>String? nullable = null;  String neverNull = "a";</code></pre>
 
-		<p class="fragment"><span class="strong">Scala:</span> Option</p>
+		<p class="fragment left"><span class="strong">Scala:</span> Option</p>
 		<pre class="fragment"><code data-trim>val s: Option[String] = Some("Hello"); s.getOrElse("World")</code></pre>
 		<!-- TODO: Scala implicits -> short conversion methods -->
 
-		<p class="fragment"><span class="strong">SQL</span> is just bad</p>
+		<p class="fragment left"><span class="strong">SQL</span> is just bad</p>
 	</section>
 
 	<section>

@@ -146,6 +146,11 @@ body {
   font-size: 120%;
 }
 
+.reveal p.left {
+  text-align: left;
+  padding-left: 50px;
+}
+
 .reveal .larger {
   font-size: 150%;
 }
