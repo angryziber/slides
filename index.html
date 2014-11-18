@@ -333,8 +333,9 @@ $("#ires").shouldBe(visible);
 
 	<section>
 		<h2>How Java devs fight nulls?</h2>
-		<pre class="fragment"><code data-trim>"hello".equals("world")</code></pre>
-		<pre class="fragment"><code data-trim>java.util.Objects @since 1.7</code></pre>
+		<pre class="fragment"><code data-trim>"hello".equals(greeting)</code></pre>
+		<p class="fragment">java.util.Objects @since 1.7</p>
+		<pre class="fragment"><code data-trim class="java">Objects.equals(a, b); Objects.compare(a, b);</code></pre>
 		<p class="fragment">Guava Objects/MoreObjects/Strings</p>
 		<pre class="fragment"><code data-trim>firstNonNull(s, "x")</code></pre>
 		<pre class="fragment"><code data-trim>isNullOrEmpty(s)</code></pre>
