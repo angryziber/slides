@@ -350,11 +350,6 @@ $("#ires").shouldBe(visible);
 		<h2>Dependency Injection</h2>
 		<p class="fragment">Comes to the rescue...</p>
 		<p class="fragment">...when OOP gets messy</p>
-	</section>
-
-	<section>
-		<h2>Dependency Injection</h2>
-		<p>...is dynamic programming</p>
 		<br>
 		<p class="fragment">Simplifies building object graphs -> loose coupling</p>
 		<p class="fragment">Dependencies are resolved at run-time</p>
@@ -362,16 +357,23 @@ $("#ires").shouldBe(visible);
 
 	<section>
 		<h2>Dependency Injection</h2>
-		<p>...is also functional?</p>
-		<br>
-		<p class="fragment">Injector can do high-level optimizations</p>
-		<p class="fragment">Injector is free to decide on best way to create objects - memoization (caching), pooling, reordering and parallelizing work when creating dependencies</p>
-		<p class="fragment">Meaning there shouldn't be side effects on creation</p>
-		<!-- https://medium.com/easy-pieces-for-programmers/how-to-trick-oo-programmers-into-loving-functional-programming-7019e1bf9bba -->
+		<p>...is dynamic programming</p>
 	</section>
 
 	<section>
-		<h2>Guice</h2>
+		<h2>Dependency Injection</h2>
+		<p>...is also functional?</p>
+		<br>
+		<p class="fragment">Injector can do high-level optimizations</p>
+		<p class="fragment">...free to decide the best way to create objects</p>
+		<p class="fragment">⇒ memoization (caching), pooling, reordering and parallelizing</p>
+		<p class="fragment">⇒ should be no side effects in constructors</p>
+		<br>
+		<a class="fragment" href="https://medium.com/easy-pieces-for-programmers/how-to-trick-oo-programmers-into-loving-functional-programming-7019e1bf9bba">More info</a>
+	</section>
+
+	<section>
+		<h2><a href="https://github.com/google/guice/wiki/Motivation">Guice</a></h2>
 
 		<p class="fragment">Declarative code for configuration</p>
 		<pre class="fragment"><code data-trim class="java">
@@ -393,7 +395,8 @@ class SuperSomething implements Something {
 
 		<p class="fragment">Makes AOP look not so bad</p>
 		<pre class="fragment"><code data-trim class="java">
-			bindInterceptor(any(), annotatedWith(Cache.class), invocation -> ...);
+			bindInterceptor(any(), annotatedWith(Cache.class),
+			invocation -> ...);
 		</code></pre>
 	</section>
 
