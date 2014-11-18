@@ -227,9 +227,9 @@
 	</section>
 
 	<section>
-		<p>Synchronization is hard</p>
-		<p>Not needed if there is no shared state</p>
-		<p>Bonus: easy to test</p>
+		<h3>Synchronization is hard</h3>
+		<p class="fragment">Not needed if there is no shared state</p>
+		<p class="fragment"><span class="strong">Bonus:</span> easier to test</p>
 	</section>
 
 	<section>
@@ -255,27 +255,28 @@
 
 	<section>
 		<h2>JSON</h2>
-		<p>data as first class citizen</p>
+		<p>data as first-class citizen</p>
+		<p class="fragment">JSON = JavaScript Object Notation</p>
 	</section>
 
 	<section>
 		<h2>Async</h2>
-		<p>NodeJS</p>
-		<p>You can actually do a lot in a single thread!</p>
-		<p>java.nio</p>
-		<p>Play framework</p>
-	</section>
-
-	<section>
-		<h2>Async</h2>
-		<p>But, code ladder</p>
-		<p>But, promises</p>
+		<p class="fragment">NodeJS</p>
+		<p class="fragment">You can actually do a lot in a single thread!</p>
+		<p class="fragment">java.nio</p>
+		<p class="fragment">Play framework + Netty</p>
+		<br>
+		<p class="fragment">But, code ladder</p>
+		<p class="fragment">But, promises</p>
 	</section>
 
 	<section>
 		<h2>Reactive programming</h2>
-		<p>Angular, Knockout, etc</p>
-		<p>input -> work -> output -> repeat</p>
+		<p class="fragment">Like in a spreadsheet</p>
+		<p class="fragment">Or triggers in DB</p>
+		<p class="fragment"><a href="https://angularjs.org/">Angular</a>, <a href="http://knockoutjs.com/">Knockout</a>, etc</p>
+		<p class="fragment">input ⇒ work ⇒ output ⇒ repeat</p>
+		<p class="fragment">In <span class="strong">Java</span> can be emulated with <span class="strong">Observer</span></p>
 	</section>
 </section>
 
@@ -297,8 +298,7 @@
 
 	<section>
 		<h2>In Java?</h2>
-		<p><a target="_blank" href="http://selenide.org">Selenide</a></p>
-		<p class="fragment">UI Testing Framework</p>
+		<p><a target="_blank" href="http://selenide.org">Selenide</a> - UI Testing Framework</p>
 		<pre class="fragment"><code data-trim>
 open("http://www.google.ee/");
 $("[name=q]").val("Hello").pressEnter();
@@ -307,7 +307,7 @@ $("#ires").shouldBe(visible);
 		<br>
 		<p class="fragment">or the first-ever chaining class</p>
 		<pre class="fragment"><code class="html" data-trim>
-			new StringBuffer().append("Hello").append(' ').append("World").toString()</code>
+			new StringBuffer().append("Hello").append("World").toString()</code>
 		</pre>
 		<p class="fragment">and any other <span class="strong">Builder</span></p>
 	</section>
