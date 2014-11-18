@@ -126,7 +126,8 @@
 <section>
 	<section>
 		<h2 class="strong">Functional programming</h2>
-		<p class="fragment">Nowadays is a hype</p>
+		<p class="fragment">Much hyped currently</p>
+		<br>
 		<p class="fragment">Most people still use OOP / Imperative</p>
 		<p class="fragment">Hoping we can do better :-)</p>
 	</section>
@@ -151,7 +152,7 @@
 	</section>
 
 	<section>
-		<h2>Its good for your code</h2>
+		<h2>It's good for your code</h2>
 		<br>
 		<p>immutable</p>
 		<p>stateless</p>
@@ -162,10 +163,10 @@
 
 	<section>
 		<h2>Reasons</h2>
-		<p>less code -> readability, productivity</p>
-		<p>fewer bugs</p>
-		<p>more work to the compiler</p>
-		<p>implicit optimizations: parallelism, late evaluation, memoization, ...</p>
+		<p class="fragment">more work to the compiler</p>
+		<p class="fragment">implicit optimizations:<br> parallelism, late evaluation, memoization, ...</p>
+		<p class="fragment">less code -> readability, productivity</p>
+		<p class="fragment">fewer bugs</p>
 	</section>
 
 	<section>
@@ -178,7 +179,7 @@
 		<br>
 		<p class="fragment">Java 8: <a target="_blank" href="https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html"><code>java.util.function.*</code></a> and Method references</p>
 		<p class="fragment">Guava: Function and Predicate</p>
-		<pre class="fragment"><code>predicate = Predicates.or(containsPattern("b"), containsPattern("3"));</code></pre>
+		<pre class="fragment"><code>p = Predicates.or(containsPattern("b"), containsPattern("3"));</code></pre>
 		<p class="fragment">Good old Decorator pattern</p>
 		<p class="fragment"><a target="_blank" href="http://hamcrest.org/JavaHamcrest/">Hamcrest</a>, <a target="_blank" href="https://mockito.org">Mockito</a></p>
 		<!--<p>But no dynamic generation without bytecode manipulation</p>-->
@@ -195,10 +196,10 @@
 		<p class="strong">vs</p>
 		<h2>Objects</h2>
 		<br>
-		<p class="fragment">Clojure: data is more important than representation</p>
+		<p class="fragment"><span class="strong">Clojure:</span> data is more important than representation</p>
 		<p class="fragment">Represent computation, not the world</p>
 		<p class="fragment">Breaking data into objects is often arbitrary</p>
-		<p class="fragment">Tuple in Java: asList()<br>convenient, semi-immutable, suitable for heterogeneous items</p>
+		<p class="fragment"><span class="strong">Tuple</span> in Java: <code>asList()</code><br>convenient, semi-immutable, ok for heterogeneous items</p>
 		<a class="fragment" target="_blank" href="http://www.lispcast.com/java-learn-from-clojure">(a good read)</a>
 	</section>
 
