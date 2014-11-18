@@ -40,18 +40,21 @@
 <div class="slides">
 
 <section>
-	<h1>Applying all this <strong>functional stuff</strong></h1>
-	<h3>in your average Java project</h3>
+	<h1>Applying this <strong>functional stuff</strong></h1>
+	<h3>in your Java project</h3>
+	<br>
 	<p>
-		<small><a href="http://github.com/angryziber">Anton Keks</a> / <a href="http://twitter.com/antonkeks">@antonkeks</a> / <a href="http://codeborne.com">Codeborne</a></small>
+		<a target="_blank" href="http://github.com/angryziber">Anton Keks</a> /
+		<a target="_blank" href="http://twitter.com/antonkeks">@antonkeks</a> /
+		<a target="_blank" href="http://codeborne.com">Codeborne</a>
 	</p>
 </section>
 
 <section>
-	<h2>Or what I learned elsewhere</h2>
-	<p>(Groovy, Scala, Clojure, Node/JS, Python, Ruby)</p>
+	<h2>Or <span class="strong">Java developer's</span> quest for answers</h2>
+	<p>(Groovy, Scala, Clojure, Node/JS, Python, Ruby, ...)</p>
 	<br>
-	<h3 class="fragment">And how to apply it in Java</h3>
+	<h3 class="fragment">And how to apply the learnt in Java</h3>
 </section>
 
 <section>
@@ -61,17 +64,19 @@
 	<h3 class="fragment roll-in strong">1.7</h3>
 	<h3 class="fragment roll-in strong">1.6</h3>
 	<h3 class="fragment roll-in strong">1.5?</h3>
+	<h3 class="fragment roll-in strong">None at all?</h3>
 </section>
 
 <section>
 	<section>
 		<h2>OOP is <span class="fragment strike-through">dead</span><span class="fragment strong">dying</span></h2>
+		<p style="position: relative; left: -143px; top: -10px;"><small>Object-Oriented Programming</small></p>
 		<br>
 		<p class="fragment">40+ years old and still has problems</p>
 		<p class="fragment">"Modeling-driven" programming</p>
 		<p class="fragment">How often do your classes model real-world stuff?</p>
 		<br>
-		<a class="fragment" href="http://kawagner.blogspot.com/2006/08/oop-is-dead.html">(a good read)</a>
+		<a class="fragment" target="_blank" href="http://kawagner.blogspot.com/2006/08/oop-is-dead.html">(a good read)</a>
 	</section>
 
 	<section>
@@ -161,11 +166,11 @@
 		<p class="fragment">Function composition ⇒ delegate, composite?</p>
 		<p class="fragment">⇒ reuse through composition</p>
 		<br>
-		<p class="fragment">Java 8: <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html"><code>java.util.function.*</code></a> and Method references</p>
+		<p class="fragment">Java 8: <a target="_blank" href="https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html"><code>java.util.function.*</code></a> and Method references</p>
 		<p class="fragment">Guava: Function and Predicate</p>
 		<pre class="fragment"><code>predicate = Predicates.or(containsPattern("b"), containsPattern("3"));</code></pre>
 		<p class="fragment">Good old Decorator pattern</p>
-		<p class="fragment"><a href="http://hamcrest.org/JavaHamcrest/">Hamcrest</a>, <a href="https://mockito.org">Mockito</a></p>
+		<p class="fragment"><a target="_blank" href="http://hamcrest.org/JavaHamcrest/">Hamcrest</a>, <a target="_blank" href="https://mockito.org">Mockito</a></p>
 		<!--<p>But no dynamic generation without bytecode manipulation</p>-->
 	</section>
 
@@ -184,7 +189,7 @@
 		<p class="fragment">Represent computation, not the world</p>
 		<p class="fragment">Breaking data into objects is often arbitrary</p>
 		<p class="fragment">Tuple in Java: asList()<br>convenient, semi-immutable, suitable for heterogeneous items</p>
-		<a class="fragment" href="http://www.lispcast.com/java-learn-from-clojure">(a good read)</a>
+		<a class="fragment" target="_blank" href="http://www.lispcast.com/java-learn-from-clojure">(a good read)</a>
 	</section>
 
 	<section>
@@ -287,7 +292,7 @@
 
 	<section>
 		<h2>In Java?</h2>
-		<p><a href="http://selenide.org">Selenide</a></p>
+		<p><a target="_blank" href="http://selenide.org">Selenide</a></p>
 		<p class="fragment">UI Testing Framework</p>
 		<pre class="fragment"><code data-trim>
 open("http://www.google.ee/");
@@ -369,11 +374,11 @@ $("#ires").shouldBe(visible);
 		<p class="fragment">⇒ memoization (caching), pooling, reordering and parallelizing</p>
 		<p class="fragment">⇒ should be no side effects in constructors</p>
 		<br>
-		<a class="fragment" href="https://medium.com/easy-pieces-for-programmers/how-to-trick-oo-programmers-into-loving-functional-programming-7019e1bf9bba">(a good read)</a>
+		<a class="fragment" target="_blank" href="https://medium.com/easy-pieces-for-programmers/how-to-trick-oo-programmers-into-loving-functional-programming-7019e1bf9bba">(a good read)</a>
 	</section>
 
 	<section>
-		<h2><a href="https://github.com/google/guice/wiki/Motivation">Guice</a></h2>
+		<h2><a target="_blank" href="https://github.com/google/guice/wiki/Motivation">Guice</a></h2>
 
 		<p class="fragment">Declarative code for configuration</p>
 		<pre class="fragment"><code data-trim class="java">
@@ -441,8 +446,8 @@ class SuperSomething implements Something {
 
 	<section>
 		<h2>Tips for Java</h2>
-		<p class="fragment"><a href="https://www.playframework.com/">Play framework</a> (1.x)</p>
-		<p class="fragment"><a href="https://github.com/spring-projects/spring-loaded">spring-loaded</a></p>
+		<p class="fragment"><a target="_blank" href="https://www.playframework.com/">Play framework</a> (1.x)</p>
+		<p class="fragment"><a target="_blank" href="https://github.com/spring-projects/spring-loaded">spring-loaded</a></p>
 		<p class="fragment">Design your API as DSL</p>
 	</section>
 </section>
@@ -492,9 +497,9 @@ class SuperSomething implements Something {
 	<p>Scala/Clojure</p>
 	<p>Java: AnnotationProcessing in <span class="strong">javac</span></p>
 	<p>Many frameworks appearing, eg:<br>
-		<a href="http://square.github.io/dagger/">Dagger</a>,
-		<a href="http://projectlombok.org/">Lombok</a>,
-		and even <a href="http://amelentev.github.io/java-oo/" title="Java Operator Overloading">Java-OO</a>
+		<a target="_blank" href="http://square.github.io/dagger/">Dagger</a>,
+		<a target="_blank" href="http://projectlombok.org/">Lombok</a>,
+		and even <a target="_blank" href="http://amelentev.github.io/java-oo/" title="Java Operator Overloading">Java-OO</a>
 	</p>
 </section>
 
@@ -521,6 +526,8 @@ class SuperSomething implements Something {
 	<p>(fewer bug possibilities)</p>
 	<p>Easy to compile</p>
 	<p>Easy to run</p>
+	<br>
+	<p><a href="http://kawagner.blogspot.com/2008/05/whats-makes-programming-so-difficult.html">(a good read)</a></p>
 </section>
 
 <section>
@@ -535,10 +542,12 @@ class SuperSomething implements Something {
 <section>
 	<h1>Thanks!</h1>
 	<br>
-	<p>slides:// <a href="http://angryziber.github.io/slides/">angryziber.github.io/slides</a></p>
+	<p>slides:// <a target="_blank" href="http://angryziber.github.io/slides/">angryziber.github.io/slides</a></p>
 	<br>
 	<p>
-		<a href="http://github.com/angryziber">Anton Keks</a> / <a href="http://twitter.com/antonkeks">@antonkeks</a> / <a href="http://codeborne.com">codeborne.com</a>
+		<a target="_blank" href="http://github.com/angryziber">Anton Keks</a> /
+		<a target="_blank" href="http://twitter.com/antonkeks">@antonkeks</a> /
+		<a target="_blank" href="http://codeborne.com">codeborne.com</a>
 	</p>
 </section>
 
