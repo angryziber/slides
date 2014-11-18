@@ -157,10 +157,14 @@
 		<h2><span class="strong">Functions</span> in Java</h2>
 		<p class="fragment">Utility functions ⇒ static imports (but not static state)</p>
 		<pre class="fragment"><code>unmodifiableList(asList(1, 2, 3));</code></pre>
+		<br>
 		<p class="fragment">Function composition ⇒ delegate, composite?</p>
 		<p class="fragment">⇒ reuse through composition</p>
-		<p class="fragment">Guava: Function and Predicate</p>
+		<br>
 		<p class="fragment">Java 8: <a href="https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html"><code>java.util.function.*</code></a> and Method references</p>
+		<p class="fragment">Guava: Function and Predicate</p>
+		<pre class="fragment"><code>predicate = Predicates.or(containsPattern("b"), containsPattern("3"));</code></pre>
+		<p class="fragment">Good old Decorator pattern</p>
 		<!--<p>But no dynamic generation without bytecode manipulation</p>-->
 	</section>
 
