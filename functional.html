@@ -1,0 +1,591 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+
+	<title>Applying all this functional stuff in your average Java project</title>
+
+	<meta name="author" content="Anton Keks">
+
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<link rel="stylesheet" href="css/reveal.min.css">
+	<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+	<!-- For syntax highlighting -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+	<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+	<script>
+		if( window.location.search.match( /print-pdf/gi ) ) {
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = 'css/print/pdf.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		}
+	</script>
+
+	<!--[if lt IE 9]>
+	<script src="lib/js/html5shiv.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+<div class="reveal">
+<div class="slides">
+
+<section>
+	<h1>Applying this <strong>functional stuff</strong></h1>
+	<h3>in your Java project</h3>
+	<br>
+	<p>
+		<a target="_blank" href="http://github.com/angryziber">Anton Keks</a> /
+		<a target="_blank" href="http://twitter.com/antonkeks">@antonkeks</a> /
+		<a target="_blank" href="http://codeborne.com">Codeborne</a>
+	</p>
+</section>
+
+<section>
+	<h2>Or <span class="strong">Java developer's</span> quest for answers</h2>
+	<p>(Groovy, Scala, Clojure, Node/JS, Python, Ruby, ...)</p>
+	<br>
+	<h3 class="fragment">And how to apply the learnt in Java</h3>
+</section>
+
+<section>
+	<h2>Which Java do you use?</h2>
+	<br>
+	<h3 class="fragment roll-in strong">1.8</h3>
+	<h3 class="fragment roll-in strong">1.7</h3>
+	<h3 class="fragment roll-in strong">1.6</h3>
+	<h3 class="fragment roll-in strong">1.5?</h3>
+	<h3 class="fragment roll-in strong">None at all?</h3>
+</section>
+
+<section>
+	<section>
+		<h2>OOP is <span class="fragment strike-through">dead</span><span class="fragment strong">dying</span></h2>
+		<p style="position: relative; left: -143px; top: -10px;"><small>Object-Oriented Programming</small></p>
+		<br>
+		<p class="fragment">40+ years old and still has problems</p>
+		<p class="fragment">"Modeling-driven" programming</p>
+		<p class="fragment">How often do your classes model real-world stuff?</p>
+		<br>
+		<a class="fragment" target="_blank" href="http://kawagner.blogspot.com/2006/08/oop-is-dead.html">(a good read)</a>
+	</section>
+
+	<section>
+		<h2>OOP quotes</h2>
+		<br>
+		<blockquote class="fragment">
+			“I don't think object-oriented programming is a structuring paradigm that meets my standards of elegance.” – <span class="strong">Edsger Dijkstra</span>
+		</blockquote>
+		<br>
+		<blockquote class="fragment">
+			<span style="opacity: 0.5">“The problem with object-oriented languages is they’ve got all this implicit environment that they carry around with them.</span>
+			You wanted a banana but what you got was a gorilla holding the banana and the entire jungle.” – <span class="strong">Joe Armstrong</span>
+		</blockquote>
+	</section>
+
+	<section>
+		<h2>Specialty of <span class="strong">this</span></h2>
+		<p class="fragment">Extra parameter, used for function dispatch</p>
+		<p class="fragment">Pattern matching - more powerful concept</p>
+		<p class="fragment">Reuse of whole classes instead of smaller functions</p>
+	</section>
+
+	<section>
+		<h2>Mutable state</h2>
+		<p class="fragment">Unsafe to return</p>
+		<p class="fragment">No caching</p>
+		<p class="fragment">No sharing</p>
+		<p class="fragment">Concurrency issues</p>
+	</section>
+
+	<section>
+		<h2>Nowadays</h2>
+		<p class="fragment">People use less OOP features in langs like Java</p>
+		<p class="fragment">Code reuse is hard in OOP</p>
+		<p class="fragment">E.g. <a title="Dependency Injection" href="#/di">DI</a> & <a title="Aspect-Oriented Programming" href="#/aop">AOP</a> try to solve that</p>
+		<p class="fragment"><span class="strong">SOA</span> = going back to procedures ;-)</p>
+	</section>
+
+	<!--section>
+		<h2>Multiparadigm</h2>
+		<p>Has its problems</p>
+		<p>Having multiple solutions to a problem makes code reuse more difficult</p>
+		<p>Paradigm is more how you think</p>
+	</section-->
+</section>
+
+<section>
+	<section>
+		<h2 class="strong">Functional programming</h2>
+		<p class="fragment">Much hyped currently</p>
+		<br>
+		<p class="fragment">Most people still use OOP / Imperative</p>
+		<p class="fragment">Hoping we can do better :-)</p>
+	</section>
+
+	<section>
+		<h3>Why make programming even harder?</h3>
+		<br>
+		<blockquote class="fragment">Program some Java - your C++ will improve</blockquote>
+		<br>
+		<blockquote class="fragment">Program some X - your Java will improve</blockquote>
+	</section>
+
+	<section>
+		<h3>But look around!</h3>
+		<h2 class="strong">Functional programming</h2>
+		<br>
+		<p class="fragment">Initially mostly in academics</p>
+		<br>
+		<p class="fragment">Now even in JavaScript :-)</p>
+		<p class="fragment">And most modern languages</p>
+		<p class="fragment">And even Java <span class="fragment strong">8</span></p>
+	</section>
+
+	<section>
+		<h2>It's good for your code</h2>
+		<br>
+		<p>immutable</p>
+		<p>stateless</p>
+		<p>side-effect free</p>
+		<br>
+		<h2 class="fragment strong">⬆ Functions ⬆</h2>
+	</section>
+
+	<section>
+		<h2>Reasons</h2>
+		<p class="fragment">more work to the compiler</p>
+		<p class="fragment">implicit optimizations:<br> parallelism, late evaluation, memoization, ...</p>
+		<p class="fragment">less code -> readability, productivity</p>
+		<p class="fragment">fewer bugs</p>
+	</section>
+
+	<section>
+		<h2><span class="strong">Functions</span> in Java</h2>
+		<p class="fragment">Utility functions ⇒ static imports (but not static state)</p>
+		<pre class="fragment"><code>unmodifiableList(asList(1, 2, 3));</code></pre>
+		<br>
+		<p class="fragment">Function composition ⇒ delegate, composite?</p>
+		<p class="fragment">⇒ reuse through composition</p>
+		<br>
+		<p class="fragment">Java 8: <a target="_blank" href="https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html"><code>java.util.function.*</code></a> and Method references</p>
+		<p class="fragment">Guava: Function and Predicate</p>
+		<pre class="fragment"><code>p = Predicates.or(containsPattern("b"), containsPattern("3"));</code></pre>
+		<p class="fragment">Good old Decorator pattern</p>
+		<p class="fragment"><a target="_blank" href="http://hamcrest.org/JavaHamcrest/">Hamcrest</a>, <a target="_blank" href="https://mockito.org">Mockito</a></p>
+		<!--<p>But no dynamic generation without bytecode manipulation</p>-->
+	</section>
+
+	<section>
+		<h2>Stateless</h2>
+		<p><a href="https://www.playframework.com/documentation/1.2/controllers#session">Play framework sessions</a></p>
+		<p>Testing</p>
+	</section>
+
+	<section>
+		<h2>Data</h2>
+		<p class="strong">vs</p>
+		<h2>Objects</h2>
+		<br>
+		<p class="fragment"><span class="strong">Clojure:</span> data is more important than representation</p>
+		<p class="fragment">Represent computation, not the world</p>
+		<p class="fragment">Breaking data into objects is often arbitrary</p>
+		<p class="fragment"><span class="strong">Tuple</span> in Java: <code>asList()</code><br>convenient, semi-immutable, ok for heterogeneous items</p>
+		<a class="fragment" target="_blank" href="http://www.lispcast.com/java-learn-from-clojure">(a good read)</a>
+	</section>
+
+	<section>
+		<h2>Collections / Iterables</h2>
+		<p class="fragment">First-class citizens</p>
+		<p class="fragment">3 <span class="strong">Lisp</span>y workhorses: map, reduce, and filter</p>
+		<p class="fragment">Chaining</p>
+		<p class="fragment">Lazy (delayed evaluation)</p>
+		<p class="fragment">Available in <span class="strong">Java 8</span> and <span class="strong">Guava</span></p>
+	</section>
+
+	<section>
+		<h2>Immutables</h2>
+		<p>are everywhere in Java API since 1.0</p>
+		<p>what about your classes?</p>
+	</section>
+</section>
+
+<section>
+	<section>
+		<h2>Parallelism</h2>
+		<h3>Concurrency</h3>
+		<h4>Multithreading</h4>
+	</section>
+
+	<section>
+		<h3>Synchronization is hard</h3>
+		<p class="fragment">Not needed if there is no shared state</p>
+		<p class="fragment"><span class="strong">Bonus:</span> easier to test</p>
+	</section>
+
+	<section>
+		<p class="fragment"><span class="strong">Clojure:</span> agents</p>
+		<p class="fragment	"><span class="strong">Scala/Akka:</span> actors</p>
+		<p class="fragment"><span class="strong">Erlang:</span> processes</p>
+		<p class="fragment"><span class="strong">Dart:</span> isolates</p>
+		<br>
+		<p class="fragment">⇒ no shared data</p>
+		<p class="fragment">⇒ message passing</p>
+		<br>
+		<p class="fragment"><span class="strong">JavaScript:</span> no concurrency (async)</p>
+	</section>
+</section>
+
+<section>
+	<section>
+		<h1>JavaScript</h1>
+		<br>
+		<p class="fragment">Dynamic, semi-functional, single threaded</p>
+		<p class="fragment">Named after Java because of its popularity</p>
+	</section>
+
+	<section>
+		<h2>JSON</h2>
+		<p>data as first-class citizen</p>
+		<p class="fragment">JSON = JavaScript Object Notation</p>
+	</section>
+
+	<section>
+		<h2>Async</h2>
+		<p class="fragment">NodeJS</p>
+		<p class="fragment">You can actually do a lot in a single thread!</p>
+		<p class="fragment">java.nio</p>
+		<p class="fragment">Play framework + Netty</p>
+		<br>
+		<p class="fragment">But, code ladder</p>
+		<p class="fragment">But, promises</p>
+	</section>
+
+	<section>
+		<h2>Reactive programming</h2>
+		<p class="fragment">Like in a spreadsheet</p>
+		<p class="fragment">Or triggers in DB</p>
+		<p class="fragment"><a href="https://angularjs.org/">Angular</a>, <a href="http://knockoutjs.com/">Knockout</a>, etc</p>
+		<p class="fragment">input ⇒ work ⇒ output ⇒ repeat</p>
+		<p class="fragment">In <span class="strong">Java</span> can be emulated with <span class="strong">Observer</span></p>
+	</section>
+</section>
+
+<section>
+	<section>
+		<h1>JQuery</h1>
+		<p class="fragment">Revolutionized web development</p>
+	</section>
+
+	<section>
+		<h2>What does it do well?</h2>
+		<p class="fragment">Short, simple syntax</p>
+		<pre class="fragment"><code class="javascript">$('#hello').val('world')</code></pre>
+		<p class="fragment">Everything is a collection</p>
+		<p class="fragment">Implicit iterations</p>
+		<p class="fragment">Chaining</p>
+		<pre class="fragment"><code>$('a').parent().addClass('nice').end().on('click', ...)</code></pre>
+	</section>
+
+	<section>
+		<h2>In Java?</h2>
+		<p><a target="_blank" href="http://selenide.org">Selenide</a> - UI Testing Framework</p>
+		<pre class="fragment"><code data-trim>
+open("http://www.google.ee/");
+$("[name=q]").val("Hello").pressEnter();
+$("#ires").shouldBe(visible);
+		</code></pre>
+		<br>
+		<p class="fragment">or the first-ever chaining class</p>
+		<pre class="fragment"><code class="html" data-trim>
+			new StringBuffer().append("Hello").append("World").toString()</code>
+		</pre>
+		<p class="fragment">and any other <span class="strong">Builder</span></p>
+	</section>
+</section>
+
+<section>
+	<section>
+		<h1>Nulls</h1>
+		<p>Probably, one of the mistakes of Java</p>
+		<p>inherited from C++ and others</p>
+		<p class="strong fragment">
+			<span class="larger">&#9760;</span> NullPointerException <span class="larger">&#9760;</span>
+		</p>
+	</section>
+
+	<section>
+		<h2>How others fare?</h2>
+
+		<p class="fragment left"><span class="strong">Objective-C:</span> no NPEs when sending messages!</p>
+		<pre class="fragment"><code data-trim>[greeter sayHelloTo:@"World" and:@"Universum"];</code></pre>
+
+		<p class="fragment left"><span class="strong">Groovy:</span> <code>?:</code> and <code>?.</code> to avoid NPE</p>
+		<pre class="fragment"><code data-trim>greeter?.sayHelloTo(world ?: "World")</code></pre>
+
+		<p class="fragment left"><span class="strong">Vala & Kotlin:</span> ? to mark nullables</p>
+		<pre class="fragment"><code data-trim>String? nullable = null;  String neverNull = "a";</code></pre>
+
+		<p class="fragment left"><span class="strong">Scala:</span> Option</p>
+		<pre class="fragment"><code data-trim>val s: Option[String] = Some("Hello"); s.getOrElse("World")</code></pre>
+
+		<p class="fragment left"><span class="strong">SQL</span> is just bad</p>
+	</section>
+
+	<section>
+		<h2>How Java devs fight nulls?</h2>
+		<pre class="fragment"><code data-trim>"hello".equals(greeting)</code></pre>
+		<p class="fragment">java.util.Objects @since 1.7</p>
+		<pre class="fragment"><code data-trim class="java">Objects.equals(a, b); Objects.compare(a, b);</code></pre>
+		<p class="fragment">Guava Objects/MoreObjects/Strings</p>
+		<pre class="fragment"><code data-trim>firstNonNull(s, "x")</code></pre>
+		<pre class="fragment"><code data-trim>isNullOrEmpty(s)</code></pre>
+		<p class="fragment">Java 8 / Guava: Optional</p>
+		<pre class="fragment"><code data-trim>Optional.of("hello").orElse("x")</code></pre>
+		<p class="fragment">@Nullable + @Nonnull</p>
+	</section>
+</section>
+
+<section>
+	<section id="di">
+		<h2>Dependency Injection</h2>
+		<p class="fragment">Comes to the rescue...</p>
+		<p class="fragment">...when OOP gets messy</p>
+		<br>
+		<p class="fragment">Simplifies building object graphs ⇒ loose coupling</p>
+		<p class="fragment">Dependencies are resolved at run-time</p>
+	</section>
+
+	<section>
+		<h2>Dependency Injection</h2>
+		<p>...is dynamic programming</p>
+	</section>
+
+	<section>
+		<h2>Dependency Injection</h2>
+		<p>...is also functional?</p>
+		<br>
+		<p class="fragment">Injector can do high-level optimizations</p>
+		<p class="fragment">...free to decide the best way to create objects</p>
+		<br>
+		<p class="fragment">⇒ memoization (caching), pooling, reordering and parallelizing</p>
+		<p class="fragment">⇒ should be no side effects in constructors</p>
+		<br>
+		<a class="fragment" target="_blank" href="https://medium.com/easy-pieces-for-programmers/how-to-trick-oo-programmers-into-loving-functional-programming-7019e1bf9bba">(a good read)</a>
+	</section>
+
+	<section>
+		<h2><a target="_blank" href="https://github.com/google/guice/wiki/Motivation">Guice</a></h2>
+
+		<p class="fragment">Declarative code for configuration</p>
+		<pre class="fragment"><code data-trim class="java">
+			bind(Something.class).to(SuperSomething.class);
+		</code></pre>
+
+		<p class="fragment">Bootstrap</p>
+		<pre class="fragment"><code data-trim>
+Injector injector = Guice.createInjector(new MyModule());
+Something s = injector.getProvider(Something.class).get();
+		</code></pre>
+
+		<p class="fragment">Use</p>
+		<pre class="fragment"><code data-trim class="java">
+class SuperSomething implements Something {
+  @Inject AnotherThing another;
+}
+		</code></pre>
+
+		<p class="fragment">Makes AOP look not so bad</p>
+		<pre class="fragment"><code data-trim class="java">
+			bindInterceptor(any(), annotatedWith(Cache.class),
+			invocation -> ...);
+		</code></pre>
+	</section>
+
+	<section id="aop">
+		<h2>AOP</h2>
+		<p>Aspect-Oriented Programming</p>
+		<br>
+		<p class="fragment">Much hyped in mid-2000s</p>
+		<p class="fragment">Crazy terminology, disastrous implementations</p>
+		<p class="fragment">Actually means wrapping of methods <i>(advices)</i></p>
+		<p class="fragment">for Caching, Logging, etc</p>
+		<p class="fragment strong">i.e. keeping code cleaner</p>
+	</section>
+</section>
+
+<section>
+	<section>
+		<h2>Dynamic</h2>
+		<p class="strong">vs</p>
+		<h2>Static</h2>
+	</section>
+
+	<section>
+		<h3>What I learned?</h3>
+		<p class="fragment">"Change + Refresh" workflow</p>
+		<p class="fragment">Quick prototyping</p>
+		<p class="fragment">Duck typing is convenient</p>
+		<p class="fragment">DSLs</p>
+		<br>
+		<p class="fragment strong">But...</p>
+		<p class="fragment">Static compilation is so much better for refactoring</p>
+		<p class="fragment">Unit tests with 100% coverage are essential</p>
+		<p class="fragment">IDE support...</p>
+	</section>
+
+	<section>
+		<h2>Outcomes</h2>
+		<p class="fragment"><span class="strong">Dart, TypeScript:</span> optional types</p>
+		<p class="fragment"><span class="strong">Scala et al:</span> type inference, implicits, <span title="structural typing">duck typing</span></p>
+	</section>
+
+	<section>
+		<h2>Tips for Java</h2>
+		<p class="fragment"><a target="_blank" href="https://www.playframework.com/">Play framework</a> (1.x)</p>
+		<p class="fragment"><a target="_blank" href="https://github.com/spring-projects/spring-loaded">spring-loaded</a></p>
+		<p class="fragment">Design your API as DSL</p>
+	</section>
+</section>
+
+<!--section>
+	<section>
+		<h1>Scala</h1>
+		<p>Often considered a good alternative to Java</p>
+		<p>Object-oriented + Functional</p>
+		<p>Academic</p>
+		<p>Very slow compiler</p>
+		<p>Operator overloading</p>
+		<p>Sometimes hard to understand</p>
+	</section>
+</section-->
+
+<section>
+	<section>
+		<h2>Boilerplate</h2>
+		<p class="fragment">Java has a lot; very verbose; violates DRY</p>
+		<p class="fragment">You learn to hate it</p>
+		<p class="fragment">More clean code (tm)</p>
+	</section>
+
+	<section>
+		<h2>Java boilerplate</h2>
+		<p class="fragment">getters/setters</p>
+		<p class="fragment">Java Beans convention...</p>
+		<p class="fragment">JQuery: val() & val("x")</p>
+		<p class="fragment">null checks</p>
+		<p class="fragment">iterations</p>
+	</section>
+
+	<section>
+		<h2>Fixing Java boilerplate</h2>
+		<p class="fragment">there shouldn't be so much, most can be hidden</p>
+		<p class="fragment">don't generate code</p>
+		<p class="fragment">mostly, it boils down to API</p>
+		<p class="fragment">meaning, your own API can be a lot better!</p>
+		<p class="fragment">smaller units of reuse - functions</p>
+	</section>
+</section>
+
+<section>
+	<h2>Macros</h2>
+	<p class="fragment"><code>#preprocessing</code> in C</p>
+	<p class="fragment">Scala/Clojure</p>
+	<p class="fragment">Java: AnnotationProcessing in <span class="strong">javac</span></p>
+	<p class="fragment">Many frameworks appearing, eg:<br>
+		<a target="_blank" href="http://square.github.io/dagger/">Dagger</a>,
+		<a target="_blank" href="http://projectlombok.org/">Lombok</a>,
+		and even <a target="_blank" href="http://amelentev.github.io/java-oo/" title="Java Operator Overloading">Java-OO</a>
+	</p>
+</section>
+
+<section>
+	<h2>Guava</h2>
+	<p class="fragment">FluentIterable</p>
+	<p class="fragment">Iterables, Maps, Predicates, Functions, Ordering</p>
+	<p class="fragment">New collections: Multimap, BiMap, Table, Immutable*</p>
+	<p class="fragment">Promotes immutable collections</p>
+</section>
+
+<section>
+	<h2>Like design patterns</h2>
+	<p>Many of those bring more of</p>
+	<p>dynamic and functional</p>
+	<p>to Java et al</p>
+</section>
+
+<section>
+	<h1>Simplicity</h1>
+	<h2>Clean code</h2>
+	<p>Easy to read</p>
+	<p>Easy to write</p>
+	<p>(fewer bug possibilities)</p>
+	<p>Easy to compile</p>
+	<p>Easy to run</p>
+	<br>
+	<p><a href="http://kawagner.blogspot.com/2008/05/whats-makes-programming-so-difficult.html">(a good read)</a></p>
+</section>
+
+<section>
+	<h2>And what others can learn from <span class="strong">Java?</span></h2>
+	<p class="fragment">Cross-platform</p>
+	<p class="fragment">Unicode since 1995</p>
+	<p class="fragment">JIT, performance</p>
+	<p class="fragment">Backward compatibility</p>
+	<p class="fragment strong">(both binary and source level)</p>
+</section>
+
+<section>
+	<h1>Thanks!</h1>
+	<br>
+	<p>slides:// <a target="_blank" href="http://angryziber.github.io/slides/">angryziber.github.io/slides</a></p>
+	<br>
+	<p>
+		<a target="_blank" href="http://github.com/angryziber">Anton Keks</a> /
+		<a target="_blank" href="http://twitter.com/antonkeks">@antonkeks</a> /
+		<a target="_blank" href="http://codeborne.com">codeborne.com</a>
+	</p>
+</section>
+
+</div>
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.min.js"></script>
+
+<script>
+	Reveal.initialize({
+		controls: true,
+		progress: true,
+		history: true,
+		center: true,
+
+		theme: 'anton',
+		transition: 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+		zoomKey: 'ctrl',
+
+		// Parallax scrolling
+		// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+		// parallaxBackgroundSize: '2100px 900px',
+
+		// Optional libraries used to extend on reveal.js
+		dependencies: [
+			{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+			{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+			{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+			{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+		]
+	});
+</script>
+
+</body>
+</html>
