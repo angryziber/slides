@@ -24,6 +24,18 @@
       min-width: 1000px;
       min-height: 700px
     }
+
+    .text-shadow {
+      text-shadow: 0 0 3px rgba(0,0,0,0.5);
+    }
+
+    .text-shadow div {
+      width: 100%;
+    }
+
+    .text-shadow a {
+      color: inherit !important;
+    }
   </style>
 
 	<!-- If the query includes 'print-pdf', include the PDF print sheet -->
@@ -70,21 +82,25 @@
   </section>
 
   <section>
-    <img src="http://www.allmobileworld.it/wp-content/uploads/2013/08/Google-Chromecast.jpg">
-    <ul>
-      <li style="color: red" class="fragment">
-        AzureWave <a href="http://www.azurewave.com/product_AW-NH387_1.asp" target="_blank">AW-NH387</a> 802.11 b/g/n WiFi, Bluetooth & FM
-      </li>
-      <li style="color: orange" class="fragment">
-        Marvell DE3005-A1 System on Chip
-      </li>
-      <li style="color: yellow" class="fragment">
-        Micron <a href="http://www.micron.com/parts/nand-flash/mass-storage/mt29f16g08cbacawp-it" target="_blank">MT29F16G08MAA</a> 2 GB Flash Memory
-      </li>
-      <li style="color: green" class="fragment">
-        Micron <a href="http://www.micron.com/parts/dram/ddr3-sdram/mt41k256m16ha-125" target="_blank">D9PXV</a> 512 MB DDR3L SDRAM
-      </li>
-    </ul>
+    <div class="text-shadow" style="position: relative">
+      <div style="position: absolute; top: -30px">
+        <p style="color: red" class="fragment">
+          AzureWave <a href="http://www.azurewave.com/product_AW-NH387_1.asp" target="_blank">AW-NH387</a> 802.11 b/g/n WiFi, Bluetooth & FM
+        </p>
+        <p style="color: orange" class="fragment">
+          Marvell DE3005-A1 System on Chip
+        </p>
+      </div>
+      <div style="position: absolute; bottom: -30px">
+        <p style="color: yellow" class="fragment">
+          Micron <a href="http://www.micron.com/parts/nand-flash/mass-storage/mt29f16g08cbacawp-it" target="_blank">MT29F16G08MAA</a> 2 GB Flash Memory
+        </p>
+        <p style="color: green" class="fragment">
+          Micron <a href="http://www.micron.com/parts/dram/ddr3-sdram/mt41k256m16ha-125" target="_blank">D9PXV</a> 512 MB DDR3L SDRAM
+        </p>
+      </div>
+      <img src="http://www.allmobileworld.it/wp-content/uploads/2013/08/Google-Chromecast.jpg">
+    </div>
   </section>
 
   <section>
