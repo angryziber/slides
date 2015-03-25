@@ -18,6 +18,14 @@
 	<!-- For syntax highlighting -->
 	<link rel="stylesheet" href="lib/css/zenburn.css">
 
+  <style>
+    iframe {
+      background-color: white;
+      min-width: 1000px;
+      min-height: 700px
+    }
+  </style>
+
 	<!-- If the query includes 'print-pdf', include the PDF print sheet -->
 	<script>
 		if( window.location.search.match( /print-pdf/gi ) ) {
@@ -52,6 +60,11 @@
 
 <section>
   <section>
+    <iframe src="https://www.google.com/chrome/devices/chromecast/"></iframe>
+  </section>
+
+  <section>
+    <p class="fragment">10M sold in 2014</p>
     <img src="http://files.tested.com/photos/2013/07/24/51471-chromecast.jpg">
     <p class="fragment">Model Number: H2G2-42</p>
   </section>
@@ -107,6 +120,14 @@
   </section>
 
   <section>
+    <h3>Sounds like AppleTV?</h3>
+    <p>(only 3 times cheaper)</p>
+    <p>(& cross-platform)</p>
+    <p>Linux & Windows & even Mac</p>
+    <h3>Much better!</h3>
+  </section>
+
+  <section>
     <h2>Apps</h2>
     <p>HTML/JS</p>
     <p>running on the device</p>
@@ -114,64 +135,58 @@
   </section>
 
   <section>
-    <p><a href="https://www.google.com/chrome/devices/chromecast/apps.html" target="_blank">chromecast/apps</a></p>
-    <iframe src="https://www.google.com/chrome/devices/chromecast/apps.html"
-            style="background-color: white; min-width: 900px; min-height: 600px"></iframe>
-  </section>
-
-  <section>
-    <h3>Sounds like AppleTV?</h3>
-    <p>(only 3 times cheaper)</p>
-    <p>(& cross-platform)</p>
-    <h3>No!</h3>
-  </section>
-
-  <section>
-    <p>Apps run on the device</p>
     <p>You use laptop/phone to launch & control</p>
-    <p>But apps run independently</p>
+    <p>Called <strong>senders</strong></p>
+    <p>Receivers run independently</p>
   </section>
 </section>
 
 <section>
-  <h3>Developer's API</h3>
-  <h3>Standalone operation</h3>
-  <p>Including streaming</p>
-  <p>Your apps, running on the device</p>
-  <p>in HTML/JS</p>
-  <p>Hence <strong>Chrome</strong>cast</p>
-</section>
+  <section>
+    <h3>Developer's API</h3>
+  </section>
 
-<section>
-  <h3>Sender vs Receiver</h3>
-</section>
+  <section>
+    <h3>Sender vs Receiver</h3>
+  </section>
 
-<section>
-  <h3>Sender</h3>
-  <p>Android</p>
-  <p>iOS</p>
-  <p>Chrome (with extension)</p>
-  <p><a href="https://developers.google.com/cast/docs/ux_guidelines#sender-cast-icon-available">UX Guidelines</a></p>
-</section>
+  <section>
+    <h3>Sender</h3>
+    <p>Android</p>
+    <p>iOS</p>
+    <p>Chrome (with extension)</p>
+    <p><a href="https://developers.google.com/cast/docs/ux_guidelines#sender-cast-icon-available">UX Guidelines</a></p>
+  </section>
 
-<section>
-  <h3>Receiver</h3>
-  <p>Default media player</p>
-  <p>Styled media player</p>
-  <p>Custom (own HTML/JS)</p>
-</section>
+  <section>
+    <h3>Receiver</h3>
+    <p>Default media player</p>
+    <p>Styled media player</p>
+    <p>Custom (own HTML/JS)</p>
+  </section>
 
-<section>
-  <h3>Receiver</h3>
-  <p>URL -> App ID must be registered with Google</p>
-  <p>Private vs Public</p>
-  <p>Private only in Development mode</p>
+  <section>
+    <h3>Receiver</h3>
+    <p>URL -> App ID must be registered with Google</p>
+    <p>Private vs Public</p>
+    <p>Private only in Development mode</p>
+  </section>
+
+  <section>
+    <h3>Tips</h3>
+    <p>Canvas</p>
+    <p>Abstract from receiver API</p>
+    <p>Assign commands to e.g. keyboard shortcuts</p>
+  </section>
 </section>
 
 <section>
   <h3>The catch?</h3>
   <p>Mostly 720p</p>
+  <p>Limited HW resources</p>
+  <p>Hard to do animations</p>
   <p>Breaking updates</p>
+  <p>Developers pay $5</p>
 </section>
 
 <section>
