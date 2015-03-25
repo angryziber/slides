@@ -36,6 +36,11 @@
     .text-shadow a {
       color: inherit !important;
     }
+
+    section img.borderless {
+      border: none;
+      background: none;
+    }
   </style>
 
 	<!-- If the query includes 'print-pdf', include the PDF print sheet -->
@@ -105,20 +110,22 @@
 
   <section>
     <h3>Marvell DE3005-A1 SoC</h3>
-    <p>ARM @ 1.0 Ghz, single core</p>
-    <p>HW video/audio decoder (H.264, VC1, MPEG2)</p>
-    <p>Some GPU</p>
-    <p>HDMI 1.3 + CEC</p>
+    <p class="fragment">ARM @ 1.0 Ghz, single core</p>
+    <p class="fragment">HW video/audio decoder (H.264, VC1, MPEG2)</p>
+    <p class="fragment">Some basic GPU</p>
+    <p class="fragment">HDMI 1.3 + CEC</p>
   </section>
 </section>
 
 <section>
-  <h3>Software</h3>
+  <h2>Software</h2>
+  <img class="borderless" src="http://gambargadget.info/wp-content/uploads/2014/12/android-logo-png-transparent-background.png" height="200px" style="float: left">
+  <img class="borderless" src="http://upload.wikimedia.org/wikipedia/commons/8/87/Google_Chrome_icon_(2011).png" height="200px" style="float: right">
   <p>Android bootloader</p>
   <p>Android kernel</p>
-  <p>Google Chrome for UI</p>
-  <p>Hence <strong>Chrome</strong>cast</p>
-  <p>(auto-updates, of course)</p>
+  <p>UI: Google Chrome</p>
+  <p class="fragment">Hence <strong>Chrome</strong>cast</p>
+  <p class="fragment">(auto-updates, of course)</p>
 </section>
 
 <section>
@@ -128,69 +135,37 @@
 
   <section>
     <p>Play video/audio</p>
-    <p>Display HTML pages</p>
-    <p>Cast tab</p>
-    <p>Mirror screen</p>
-    <p>Mirror Android screen</p>
-    <p>All this with audio :-)</p>
+    <p class="fragment">Display HTML pages</p>
+    <p class="fragment">Cast browser tabs</p>
+    <p class="fragment">Mirror screen</p>
+    <p class="fragment">Mirror Android screen</p>
+    <p class="fragment">All this with audio :-)</p>
   </section>
 
   <section>
-    <h3>Sounds like AppleTV?</h3>
-    <p>(only 3 times cheaper)</p>
-    <p>(& cross-platform)</p>
-    <p>Linux & Windows & even Mac</p>
-    <h3>Much better!</h3>
+    <h2>Sounds like AppleTV?</h2>
+    <h3 class="fragment">Not really!</h3>
+    <br>
+    <p class="fragment">3 times cheaper</p>
+    <p class="fragment">Many times smaller</p>
+    <div class="fragment">
+      <p>Cross-platform:</p>
+      <p>Linux & Windows & even Mac</p>
+    </div>
   </section>
 
   <section>
-    <h2>Apps</h2>
-    <p>HTML/JS</p>
-    <p>running on the device</p>
-    <p>Called <strong>receivers</strong></p>
+    <h2>Apps on TV</h2>
+    <p class="fragment">HTML/JS</p>
+    <p class="fragment">running on the device</p>
+    <p class="fragment">Called <strong>receivers</strong></p>
   </section>
 
   <section>
     <p>You use laptop/phone to launch & control</p>
-    <p>Called <strong>senders</strong></p>
-    <p>Receivers run independently</p>
-  </section>
-</section>
-
-<section>
-  <section>
-    <h2>Sender & Receiver</h2>
-    <h3><a href="https://developers.google.com/cast/docs/developers" target="_blank">Developer's API</a></h3>
-  </section>
-
-  <section>
-    <h3>Sender</h3>
-    <p>Chrome (with extension)</p>
-    <p>Android</p>
-    <p>iOS</p>
-    <p><a href="https://developers.google.com/cast/docs/ux_guidelines#sender-cast-icon-available">UX Guidelines</a></p>
-  </section>
-
-  <section>
-    <h3>Receiver = TV</h3>
-    <p>Default media player</p>
-    <p>Styled media player</p>
-    <p>Custom (own HTML/JS)</p>
-  </section>
-
-  <section>
-    <h3><a href="https://cast.google.com/publish/" target="_blank">Google Cast Developer Console</a></h3>
-    <p>Receiver URL must be registered with Google</p>
-    <p>-> App ID</p>
-    <p>URL can be local</p>
-    <p>Published apps must use HTTPS</p>
-    <p>Unpublished apps only on devices registered for testing</p>
-  </section>
-
-  <section>
-    <h3>Testing/Debugging</h3>
-    <p>Registered devices provide developer's console</p>
-    <p>http://chromecast.local:9222</p>
+    <p class="fragment">Called <strong>senders</strong></p>
+    <p class="fragment">Receivers run independently from senders</p>
+    <img src="https://www.google.com/chrome/assets/common/images/chromecast/chromecast-despicable-me.jpg" style="padding: 20px; background: white">
   </section>
 </section>
 
@@ -201,30 +176,77 @@
 </section>
 
 <section>
+  <section>
+    <h2>Senders & Receivers</h2>
+    <p>use</p>
+    <h3><a href="https://developers.google.com/cast/docs/developers" target="_blank">Google Cast API</a></h3>
+    <br>
+    <p class="fragment">Also works with Android TV</p>
+  </section>
+
+  <section>
+    <h3>Senders</h3>
+    <p>Chrome (with Google Cast extension)</p>
+    <p>Android apps & OS</p>
+    <p>iOS apps</p>
+    <p><a href="https://developers.google.com/cast/docs/ux_guidelines#sender-cast-icon-available">UX Guidelines</a></p>
+  </section>
+
+  <section>
+    <h3>Receiver = TV</h3>
+    <br>
+    <ul>
+      <li>Default media player</li>
+      <li>Styled media player (CSS)</li>
+      <li>Custom (own HTML/JS)</li>
+    </ul>
+    <br><br>
+    <p>Multiple senders can be connected</p>
+  </section>
+
+  <section>
+    <h3><a href="https://cast.google.com/publish/" target="_blank">Google Cast Developer Console</a></h3>
+    <p>Receiver URL must be registered with Google</p>
+    <p>-> App ID</p>
+    <p class="fragment">URL can be local</p>
+    <p class="fragment">Published apps must use HTTPS</p>
+    <p class="fragment">Unpublished apps only on devices registered for testing</p>
+  </section>
+
+  <section>
+    <h3>Testing/Debugging</h3>
+    <p>Registered devices provide developer's console</p>
+    <p><a href="http://chromecast.local:9222" target="_blank">http://chromecast.local:9222</a></p>
+  </section>
+</section>
+
+<section>
   <h3>Tips for developers</h3>
-  <p>Use latest HTML standards</p>
-  <p>Use canvas</p>
-  <p>Abstract from receiver API</p>
-  <p>Easier to develop/test</p>
-  <p>Assign commands to e.g. keyboard shortcuts</p>
+  <p class="fragment">Use latest HTML standards (no IE support needed!)</p>
+  <p class="fragment">Use canvas for graphics</p>
+  <br>
+  <p class="fragment">Abstract from receiver API:</p>
+  <p class="fragment">Easier to develop/test</p>
+  <p class="fragment">Assign commands to e.g. keyboard shortcuts</p>
 </section>
 
 <section>
   <h3>The catch?</h3>
-  <p>Mostly 720p</p>
-  <p>Limited HW resources</p>
-  <p>Hard to do animations</p>
-  <p>Breaking updates</p>
-  <p>Developers pay $5</p>
+  <p class="fragment">Mostly 720p</p>
+  <p class="fragment">Limited HW resources</p>
+  <p class="fragment">Easy to crash</p>
+  <p class="fragment">Hard to do animations</p>
+  <p class="fragment">Breaking updates</p>
+  <p class="fragment">Developers pay $5</p>
 </section>
 
 <section>
   <h3>More cool stuff</h3>
-  <p>Backdrop</p>
-  <p>Ultrasonic for party guests</p>
-  <p>Cast audio from your phone</p>
-  <p>CEC - use standard remote control</p>
-  <p>Synology DS video</p>
+  <p class="fragment">Backdrop</p>
+  <p class="fragment">Ultrasonic PINs for (party) guests</p>
+  <p class="fragment">CEC - use standard remote control</p>
+  <p class="fragment">Cast audio from your phone</p>
+  <p class="fragment">Synology DS video</p>
 </section>
 
 <section>
