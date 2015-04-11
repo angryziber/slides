@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+
+	<title>Building an Enterprise-less online bank</title>
+
+	<meta name="author" content="Anton Keks">
+
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<link rel="stylesheet" href="css/reveal.min.css">
+	<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+	<!-- For syntax highlighting -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+  <style>
+    iframe {
+      background-color: white;
+      min-width: 1000px;
+      min-height: 700px
+    }
+
+    .text-shadow {
+      text-shadow: 0 0 3px rgba(0,0,0,0.5);
+    }
+
+    .text-shadow div {
+      width: 100%;
+    }
+
+    .text-shadow a {
+      color: inherit !important;
+    }
+
+    section img.borderless {
+      border: none;
+      background: none;
+    }
+  </style>
+
+	<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+	<script>
+		if( window.location.search.match( /print-pdf/gi ) ) {
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = 'css/print/pdf.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		}
+	</script>
+
+	<!--[if lt IE 9]>
+	<script src="lib/js/html5shiv.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+<div class="reveal">
+<div class="slides">
+
+<section>
+  <h3>Building an Enterprise-less</h3>
+  <h1><strong>online bank</strong></h1>
+  <br><br>
+  <br><br>
+  <p>
+    <a target="_blank" href="http://github.com/angryziber">Anton Keks</a> /
+    <a target="_blank" href="http://twitter.com/antonkeks">@antonkeks</a> /
+    <a target="_blank" href="http://codeborne.com">Codeborne</a>
+  </p>
+</section>
+
+<section>
+  <h3>My path</h3>
+  <p>Codeborne: founded in 2010 by former Swedbank developers</p>
+  <p>Swedbank (Hansabank) - most innovative bank in 2000s</p>
+  <p>After 2008 closed many branches/ATMs</p>
+  <p>In Estonia, most banking business is online</p>
+  <p>BSPB (70 rps)</p>
+  <p>UBRR</p>
+  <p>Global Finance, Markswebb, etc</p>
+</section>
+
+<section>
+  <p>Even in Swedbank I learned</p>
+  <p>hand-crafted code/frameworks</p>
+  <p>simpler code</p>
+  <p>easier to customize</p>
+  <p>more reliable</p>
+  <p>you can fix it in case of urgent problems</p>
+</section>
+
+<section>
+  <h3>The Enterprise</h3>
+  <p>Makes you write more code</p>
+  <p>Makes your app slow</p>
+  <p>Makes debugging hard</p>
+</section>
+
+<section>
+  <p class="fragment">Ibank</p>
+  <p class="fragment">A platform</p>
+  <p class="fragment">Private online bank + Corporate + Web</p>
+  <p class="fragment">Java 8 / Play Framework 1.3</p>
+</section>
+
+<section>
+  <section>
+    <h3>Play framework</h3>
+    <p>1.3</p>
+    <p>not 2, which is for Scala</p>
+  </section>
+
+  <section>
+    <p>Why Play is cool?</p>
+    <p>Fresh, No bullshit, anti-enterprise</p>
+    <p>Few code that works</p>
+    <p>Full-stack, quick start</p>
+    <p>Influenced our architecture a lot</p>
+  </section>
+
+  <section>
+    <h3>Now, seriously</h3>
+  </section>
+
+  <section>
+    <p>Code reloads</p>
+    <p>(You can use springloaded in your own project)</p>
+    <p>Play 2 is much slower at that</p>
+  </section>
+
+  <section>
+    <p>Disadvantage: it recompiles code itself</p>
+    <p>Good/Bad: so-called "Magic", or enhancers</p>
+    <p>Tries to make Java a better language</p>
+    <p>Properties, less boulerplate</p>
+  </section>
+
+  <section>
+    <p>Own HTTP server (based on Netty)</p>
+    <p>No even servlets :-)</p>
+  </section>
+
+  <section>
+    <p>Stateless sessions</p>
+  </section>
+
+  <section>
+    <p>Jobs</p>
+  </section>
+
+  <section>
+    <p>Async support</p>
+  </section>
+
+  <section>
+    <p>Modules</p>
+    <p>Dependency management (using ivy)</p>
+    <p>Many 3rd-party stuff</p>
+  </section>
+
+  <section>
+    <p>Plugins</p>
+  </section>
+
+  <section>
+    <p>Testing is part of the framework</p>
+    <p>Rails-style boot-up-everything</p>
+    <p>Not great for TDD and relatively slow</p>
+  </section>
+
+  <section>
+    <p>Open-source @github</p>
+  </section>
+</section>
+
+<section>
+  Client side vs server side templates
+</section>
+
+<section>
+  <h3>Services</h3>
+</section>
+
+<section>
+  <h3>Guice</h3>
+  <h3>Caching</h3>
+</section>
+
+<section>
+  <h3>Integrations</h3>
+  <p>SOAP client</p>
+  <p>Stored procedures</p>
+  <p>Play support async IO, but hard with stored procedures</p>
+</section>
+
+<section>
+  ibans vs many banks
+</section>
+
+<section>
+  Rest API
+</section>
+
+<section>
+  <h3>DB</h3>
+  <p>Hibernate tuning</p>
+  <p>Play customization</p>
+  <p>@DynamicUpdate</p>
+  <p>Non-JPA vs JPA</p>
+  <p>Transaction length</p>
+  <p>Liquibase</p>
+</section>
+
+<section>
+  <h3>Jobs</h3>
+  <p>Deferred and recurrent payment processing</p>
+  <p>Asynchronous stuff</p>
+</section>
+
+<section>
+  <h3>Logging</h3>
+</section>
+
+<section>
+  <h3>Testing</h3>
+  <p>Unit tests</p>
+  <p>As much as possible</p>
+  <p>Selenide for UI tests</p>
+  <p>In-memory DB</p>
+  <p>Restores state before each test</p>
+  <p>Parallel execution, 4 mins, 1500 tests</p>
+</section>
+
+<section>
+  <h3>CMS</h3>
+</section>
+
+<section>
+  <h1>Thank you!</h1>
+  <br>
+  <p>slides:// <a target="_blank" href="http://angryziber.github.io/slides/">angryziber.github.io/slides</a></p>
+  <br>
+  <p>
+    <a target="_blank" href="http://github.com/angryziber">Anton Keks</a> /
+    <a target="_blank" href="http://twitter.com/antonkeks">@antonkeks</a> /
+    <a target="_blank" href="http://codeborne.com">Codeborne</a>
+  </p>
+</section>
+
+</div>
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.min.js"></script>
+
+<script>
+	Reveal.initialize({
+		controls: true,
+		progress: true,
+		history: true,
+		center: true,
+
+		theme: 'anton',
+		transition: 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+		zoomKey: 'ctrl',
+
+		// Parallax scrolling
+		// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+		// parallaxBackgroundSize: '2100px 900px',
+
+		// Optional libraries used to extend on reveal.js
+		dependencies: [
+			{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+			{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+			{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+			{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+		]
+	});
+</script>
+
+</body>
+</html>
