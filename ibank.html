@@ -235,67 +235,168 @@ db.url=jdbc:h2:mem
 </section>
 
 <section>
-  <h3>DB</h3>
-  <p>ActiveRecord pattern on top of JPA/Hibernate</p>
-  <pre><code data-trim>
+  <section>
+    <h3>DB</h3>
+    <p>ActiveRecord pattern on top of JPA/Hibernate</p>
+    <pre><code data-trim>
 User user = User.find("byUsername").first();
 user.lastLoginTime = now();
 user.save();
-  </code></pre>
-  <p>save() must be explicit</p>
-  <p>Hibernate in JPA mode (no detached save)</p>
-  <p>@DynamicUpdate</p>
-  <p>Transaction length</p>
-</section>
+    </code></pre>
+    <p>save() must be explicit</p>
+    <p>Hibernate in JPA mode (no detached save)</p>
+    <p>@DynamicUpdate</p>
+    <p>Transaction length</p>
+  </section>
 
-<section>
-  <h3>DB migration</h3>
-  <p>Play evolutions are good</p>
-  <p>We use Liquibase (via plugin)</p>
-  <pre><code data-trim>
+  <section>
+    <h3>DB migration</h3>
+    <p>Play evolutions are good</p>
+    <p>We use Liquibase (via plugin)</p>
+    <pre><code data-trim>
 <changeSet id="123" author="Codeborne">
   <addColumn table="books">
     <column name="pages" type="number"/>
   </addColumn>
 </changeSet>
-  </code></pre>
-  <p>Support for several databases</p>
-  <p>Share most (but not all) changesets between banks</p>
+    </code></pre>
+    <p>Support for several databases</p>
+    <p>Share most (but not all) changesets between banks</p>
+  </section>
 </section>
 
 <section>
-  <h3>Services</h3>
-  <h3>Guice</h3>
-  <p>MVSC :-)</p>
-  <p>Integrations, customizations</p>
+  <section>
+    <h3>Services</h3>
+    <p>Necessary evil</p>
+    <p>Abstraction layer between ibank and the backend(s)</p>
+    <p>ibank -> service -> banking system</p>
+    <p>MVSC :-)</p>
+  </section>
+
+  <section>
+    <h3>Guice</h3>
+    <pre><code data-trim class="java">
+  @Inject CardService cardService;
+  ...
+  List<Card> cards = cardService.activeCards(customer);
+    </code></pre>
+    <pre><code data-trim>
+  class BankOne extends Module {
+    public void configure() {
+      bind(CardService.class).to(BankOneBackendCardService.class);
+    }
+  }
+    </code></pre>
+    <pre><code data-trim>
+  class Demo extends Module {
+    public void configure() {
+      bind(CardService.class).to(DemoCardService.class);
+    }
+  }
+    </code></pre>
+    <p>Services are non-abstract classes</p>
+    <p>Integrations, customizations</p>
+  </section>
 </section>
 
 <section>
-  <h3>Integrations</h3>
-  <p>SOAP client</p>
-  <p>Custom SAX-based XML parser (DOM and xpath are slow)</p>
-  <p>Stored procedures</p>
-  <p>Play support async IO, but hard with stored procedures</p>
-  <p>More integrations - harder to be reliable</p>
-  <p>Parallel development is hard with non-agile devs</p>
-  <p>TDI: (Unit-)Test Driven Integration</p>
+  <section>
+    <h3>Integrations</h3>
+    <p>In every bank, there are plenty:</p>
+    <br>
+    <p>Core system (ABS)</p>
+    <p>Card/processing system</p>
+    <p>CRM</p>
+    <p>Forex</p>
+    <p>Customer support</p>
+    <p>Loyalty program</p>
+    <p>Partners</p>
+    <p>etc, etc, etc</p>
+  </section>
+
+  <section>
+    <p>More integrations - harder to be reliable</p>
+    <p>Parallel development is hard with non-agile devs</p>
+  </section>
+
+  <section>
+    <p>1. We write higher-level APIs for protocols first</p>
+    <p>2. Then, implement business logic using "DSL"</p>
+  </section>
+
+  <section>
+    <p>SOAP client</p>
+    <pre><code>soapService.request("Cards").param("CustomerID", 123L).send();</code></pre>
+    <p>No code generation!</p>
+    <p>No problems with SOAP 1.0, 1.1, 1.2 interoperation</p>
+  </section>
+
+  <section>
+    <p>Stored procedures</p>
+    <pre><code>dbService.query("get_customer", 123L);</code></pre>
+  </section>
+
+  <section>
+    <p>Unfortunately, many of these (over)use XML</p>
+    <p>Custom SAX-based XML parser (DOM and xpath are slow)</p>
+    <pre><code data-trim>
+new XMLParser((path, value) -> {
+  switch (path) {
+    case "messages/message": message = new Message(); break;
+    case "messages/message/@id": message.id = value; break;
+    case "messages/message/subject": message.subject = value; break;
+  }
+}).parse(xml);
+    </code></pre>
+    <p>Template-based generation</p>
+    <pre><code data-trim>
+<PAYMENT>
+  <ACCT>${beneficiaryAccount}</ACCT>
+  <NAME>${beneficiaryName}</NAME>
+  <AMT>${amount}</AMT>
+  <CCY>${currency}</CCY>
+</PAYMENT>
+    </code></pre>
+    <p>You can even use it for more bizarre SOAP requests :-)</p>
+  </section>
+
+  <section>
+    <p>TDI: (Unit-)Test Driven Integration</p>
+  </section>
+
+  <section>
+    "Standard" Rest API support out of the box
+  </section>
+
+  <section>
+    <h3>Backends are slow</h3>
+    <p>Caching via interceptors</p>
+    <p>Memcached</p>
+    <p>Prefetching jobs</p>
+  </section>
+
+  <section>
+    <h3>Backends can be offline</h3>
+    <p>Temporary storage</p>
+    <p>Deferred executor jobs</p>
+  </section>
+
+  <section>
+    <h3>Backends have partial data</h3>
+    <p>We need to merge data from multiple sources</p>
+    <p>All in the name of UX</p>
+  </section>
 </section>
 
 <section>
-  "Standard" Rest API support out of the box
-</section>
-
-<section>
-  <h3>Backends are slow</h3>
-  <p>Caching via interceptors</p>
-  <p>Memcached</p>
-  <p>Prefetching jobs</p>
-</section>
-
-<section>
-  <h3>Backends can be offline</h3>
-  <p>Temporary storage</p>
-  <p>Deferred executor jobs</p>
+  <h3>Customization</h3>
+  <p>CSS first</p>
+  <p>Services</p>
+  <p>You can override any file in sub-module</p>
+  <p>You can write 100% custom code</p>
+  <p>No architectural restrictions</p>
+  <p>(besides discouraging of copy-paste)</p>
 </section>
 
 <section>
@@ -317,6 +418,14 @@ user.save();
   <p>Play supports initial data via Fixtures</p>
   <p>Restores state before each test</p>
   <p>Parallel execution, 4 mins, 1500 tests</p>
+</section>
+
+<section>
+  <h3>Migration</h3>
+  <p>Most of our customers had previous online bank</p>
+  <p>With some users</p>
+  <p>Transition period</p>
+  <p>Continuous data migration</p>
 </section>
 
 <section>
