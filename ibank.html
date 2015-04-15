@@ -167,7 +167,7 @@ db.url=jdbc:h2:mem
 
   <section>
     <p>Async support</p>
-    <pre><code>await(WS.url("http://blah").get())</code></pre>
+    <pre><code>await(WS.url("http://blah").getAsync())</code></pre>
     <p>Returns thread to the pool</p>
     <p>Serves all static files asynchronously</p>
     <p>But, hard to call DB stored procedures that way</p>
@@ -259,12 +259,12 @@ user.save();
     <h3>DB migration</h3>
     <p>Play evolutions are good</p>
     <p>We use Liquibase (via plugin)</p>
-    <pre><code data-trim>
-<changeSet id="123" author="Codeborne">
-  <addColumn table="books">
-    <column name="pages" type="number"/>
-  </addColumn>
-</changeSet>
+    <pre><code data-trim class="xml">
+&lt;changeSet id="123" author="Codeborne"&gt;
+  &lt;addColumn table="books"&gt;
+    &lt;column name="pages" type="number"/&gt;
+  &lt;/addColumn&gt;
+&lt;/changeSet&gt;
     </code></pre>
     <p>Support for several databases</p>
     <p>Share most (but not all) changesets between banks</p>
@@ -283,23 +283,23 @@ user.save();
   <section>
     <h3>Guice</h3>
     <pre><code data-trim class="java">
-  @Inject CardService cardService;
-  ...
-  List<Card> cards = cardService.activeCards(customer);
+@Inject CardService cardService;
+...
+List&lt;Card&gt; cards = cardService.activeCards(customer);
     </code></pre>
     <pre><code data-trim>
-  class BankOne extends Module {
-    public void configure() {
-      bind(CardService.class).to(BankOneBackendCardService.class);
-    }
+class BankOne extends Module {
+  public void configure() {
+    bind(CardService.class).to(BankOneBackendCardService.class);
   }
+}
     </code></pre>
     <pre><code data-trim>
-  class Demo extends Module {
-    public void configure() {
-      bind(CardService.class).to(DemoCardService.class);
-    }
+class Demo extends Module {
+  public void configure() {
+    bind(CardService.class).to(DemoCardService.class);
   }
+}
     </code></pre>
     <p>Services are non-abstract classes</p>
     <p>Integrations, customizations</p>
