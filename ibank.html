@@ -148,7 +148,16 @@
     <p>Disadvantage: it recompiles code itself</p>
     <p>Good/Bad: so-called "Magic", or enhancers</p>
     <p>Tries to make Java a better language</p>
-    <p>Properties, less boulerplate</p>
+    <p>Properties, less boilerplate</p>
+  </section>
+
+  <section>
+    <p>Config files with support for environments</p>
+    <pre><code data-trim>
+db.url=jdbc:h2:mem
+%prod.db.url=jdbc:oracle:thin:blahblah
+    </code></pre>
+    <p>Localization files</p>
   </section>
 
   <section>
@@ -157,16 +166,29 @@
   </section>
 
   <section>
+    <p>Async support</p>
+    <pre><code>await(WS.url("http://blah").get())</code></pre>
+    <p>Returns thread to the pool</p>
+    <p>Serves all static files asynchronously</p>
+    <p>But, hard to call DB stored procedures that way</p>
+  </section>
+
+  <section>
     <p>Stateless sessions</p>
-    <p>Deployment during working hours</p>
+    <p>(Signed cookies)</p>
+    <p>Deployment during working hours!</p>
   </section>
 
   <section>
     <p>Jobs</p>
-  </section>
-
-  <section>
-    <p>Async support</p>
+    <pre><code class="java">
+      new DeferredPaymentProcessor(payment).now();
+    </code></pre>
+    or
+    <pre><code class="java">
+      @Every("5mn")
+      public class DeferredPaymentProcessor extends Job { ... }
+    </code></pre>
   </section>
 
   <section>
@@ -188,7 +210,7 @@
   </section>
 
   <section>
-    <p>Open-source @github</p>
+    <p>Alive and open-source <a href="https://github.com/playframework/play1">@github</a></p>
   </section>
 </section>
 
@@ -197,6 +219,15 @@
   <p>MVC is much easier</p>
   <p>If needed, write modular JS/AJAX</p>
   <p>Less for CSS</p>
+  <pre><code data-trim>
+.book {
+  padding-top: @defaultPadding + 10px;
+
+  .title {
+    font-weight: bold;
+  }
+}
+  </code></pre>
   <aside class="notes">
     Hopefully no client-side purists or angular fans here.
     You are at the wrong conference :-)
@@ -205,12 +236,31 @@
 
 <section>
   <h3>DB</h3>
-  <p>Hibernate tuning</p>
-  <p>Play customization</p>
+  <p>ActiveRecord pattern on top of JPA/Hibernate</p>
+  <pre><code data-trim>
+User user = User.find("byUsername").first();
+user.lastLoginTime = now();
+user.save();
+  </code></pre>
+  <p>save() must be explicit</p>
+  <p>Hibernate in JPA mode (no detached save)</p>
   <p>@DynamicUpdate</p>
-  <p>Non-JPA vs JPA</p>
   <p>Transaction length</p>
-  <p>Liquibase</p>
+</section>
+
+<section>
+  <h3>DB migration</h3>
+  <p>Play evolutions are good</p>
+  <p>We use Liquibase (via plugin)</p>
+  <pre><code data-trim>
+<changeSet id="123" author="Codeborne">
+  <addColumn table="books">
+    <column name="pages" type="number"/>
+  </addColumn>
+</changeSet>
+  </code></pre>
+  <p>Support for several databases</p>
+  <p>Share most (but not all) changesets between banks</p>
 </section>
 
 <section>
@@ -264,6 +314,7 @@
   <p>As much as possible</p>
   <p>Selenide for UI tests</p>
   <p>In-memory DB</p>
+  <p>Play supports initial data via Fixtures</p>
   <p>Restores state before each test</p>
   <p>Parallel execution, 4 mins, 1500 tests</p>
 </section>
