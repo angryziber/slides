@@ -210,12 +210,6 @@ db.url=jdbc:h2:mem
   </section>
 
   <section>
-    <p>Testing is part of the framework</p>
-    <p>Rails-style boot-up-everything</p>
-    <p>Not great for TDD and relatively slow</p>
-  </section>
-
-  <section>
     <p>Alive and open-source <a href="https://github.com/playframework/play1">@github</a></p>
   </section>
 </section>
@@ -432,18 +426,83 @@ new XMLParser((path, value) -> {
 </section>
 
 <section>
-  <h3>Logging</h3>
+  <section>
+    <h2>Logging</h2>
+    <p>Most developers don't log properly</p>
+  </section>
+
+  <section>
+    <h3>Goods logs are</h3>
+    <p>Compact</p>
+    <p>Machine-readable</p>
+    <p>Completely traceable</p>
+  </section>
+
+  <section>
+    <p>Multiple files</p>
+    <ul>
+      <li>request.log</li>
+      <li>security.log</li>
+      <li>services.log</li>
+      <li>general.log</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Logging tips</h3>
+    <p>Request ID / Thread ID</p>
+    <p>Durations</p>
+    <p>Java stack traces only when needed</p>
+    <p>Play: Self4J over Log4J</p>
+    <p><strong>grep/awk</strong> are your best friends</p>
+  </section>
 </section>
 
 <section>
-  <h3>Testing</h3>
-  <p>Unit tests</p>
-  <p>As much as possible</p>
-  <p>Selenide for UI tests</p>
-  <p>In-memory DB</p>
-  <p>Play supports initial data via Fixtures</p>
-  <p>Restores state before each test</p>
-  <p>Parallel execution, 4 mins, 1500 tests</p>
+  <section>
+    <h3>Testing</h3>
+    <p>Essential part of knowing that your code (still) works</p>
+  </section>
+
+  <section>
+    <p>Good: testing is part of Play</p>
+    <p>Bad: Rails-style "boot-up-everything" tests</p>
+    <p>Slow + Not great for TDD</p>
+  </section>
+
+  <section>
+    <h3>Unit + UI</h3>
+    <p>1500 tests, 4-5 mins</p>
+    <p>Run all during every build</p>
+    <p>Optimizations + Parallel execution</p>
+  </section>
+
+  <section>
+    <h3>Unit tests</h3>
+    <p>Fast, preferred</p>
+    <p>Business logic and all special cases</p>
+    <p>Mockito helps</p>
+    <pre><code data-trim>
+userService = mock(UserService.class, RETURNS_DEEP_STUBS);
+when(userService.user("bob").getFullName()).thenReturn("John");
+    </code></pre>
+  </section>
+
+  <section>
+    <h3>UI tests</h3>
+    <p>Slower, for "happy paths"</p>
+    <p>Selenide helps</p>
+    <pre><code data-trim>
+$(By.name("username")).val("bob");
+$(By.name("password")).val("secret");
+$("#login-button").click();
+$(".page.overview").should(appear);
+    </code></pre>
+    <p>In-memory DB: H2</p>
+    <p>Play supports initial data via Fixtures</p>
+    <p>Restore state before each test</p>
+    <p>Demo integration</p>
+  </section>
 </section>
 
 <section>
@@ -458,6 +517,11 @@ new XMLParser((path, value) -> {
   <h3>Build process</h3>
   <p>Jenkins</p>
   <p>Compile + unit tests + ui tests</p>
+  <p>Any green build can go to production</p>
+</section>
+
+<section>
+  <h3>Deployment</h3>
   <p>2 servers</p>
   <p>Stateless: deployment during working hours</p>
   <p>Simple DNS-based load balancing</p>
@@ -476,7 +540,8 @@ new XMLParser((path, value) -> {
 <section>
   <h1>Thank you!</h1>
   <br>
-  <p>slides:// <a target="_blank" href="http://angryziber.github.io/slides/">angryziber.github.io/slides</a></p>
+  <p>Play modules: <a href="https://github.com/codeborne">github.com/codeborne</a></p>
+  <p>Slides: <a target="_blank" href="http://angryziber.github.io/slides/">angryziber.github.io/slides</a></p>
   <br>
   <p>
     <a target="_blank" href="http://github.com/angryziber">Anton Keks</a> /
