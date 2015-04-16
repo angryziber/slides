@@ -95,20 +95,20 @@
 
 <section>
   <h3>Already in Swedbank I learned</h3>
-  <p>hand-crafted code/frameworks</p>
-  <p>simpler code</p>
-  <p>easier to customize</p>
-  <p>more reliable</p>
-  <p>you can fix it in case of urgent problems</p>
+  <p class="fragment">hand-crafted code/frameworks</p>
+  <p class="fragment">simpler code</p>
+  <p class="fragment">easier to customize</p>
+  <p class="fragment">more reliable</p>
+  <p class="fragment">you can fix it in case of urgent problems</p>
 </section>
 
 <section>
   <h3>The Enterprise</h3>
-  <p>Makes you write more code</p>
-  <p>Makes your app slow</p>
-  <p>Makes debugging hard</p>
-  <p>Makes sysadmin's life harder</p>
-  <p>If it breaks, it is broken</p>
+  <p class="fragment">Makes you write more code</p>
+  <p class="fragment">Makes your app slow</p>
+  <p class="fragment">Makes debugging hard</p>
+  <p class="fragment">Makes sysadmin's life harder</p>
+  <p class="fragment">If it breaks, it is broken</p>
 </section>
 
 <section>
@@ -121,17 +121,17 @@
 <section>
   <section>
     <h3>Play framework</h3>
-    <p>Rails, Django inspired</p>
-    <p>v 1.3</p>
-    <p>not 2, which is for Scala</p>
+    <p class="fragment">Rails, Django inspired</p>
+    <p class="fragment">v 1.3</p>
+    <p class="fragment">not 2, which is for Scala</p>
   </section>
 
   <section>
-    <p>Why Play is cool?</p>
-    <p>Fresh, no bullshit, anti-enterprise</p>
-    <p>Few code that works</p>
-    <p>Full-stack, quick start</p>
-    <p>Influenced our architecture a lot</p>
+    <h3>Why Play is cool?</h3>
+    <p class="fragment">Fresh, no bullshit, anti-enterprise</p>
+    <p class="fragment">Few code that works</p>
+    <p class="fragment">Full-stack, quick start</p>
+    <p class="fragment">Influenced our architecture a lot</p>
   </section>
 
   <section>
@@ -139,16 +139,16 @@
   </section>
 
   <section>
-    <p>Code reloads</p>
-    <p>(You can use springloaded in your own project)</p>
-    <p>Play 2 is much slower at that</p>
+    <h3>Code reloads</h3>
+    <p class="fragment">(You can use springloaded in your own project)</p>
+    <p class="fragment">Play 2 is much slower at that</p>
   </section>
 
   <section>
     <p>Disadvantage: it recompiles code itself</p>
-    <p>Good/Bad: so-called "Magic", or enhancers</p>
-    <p>Tries to make Java a better language</p>
-    <p>Properties, less boilerplate</p>
+    <p class="fragment">Good/Bad: so-called "Magic", or enhancers</p>
+    <p class="fragment">Tries to make Java a better language</p>
+    <p class="fragment">Properties, less boilerplate</p>
   </section>
 
   <section>
@@ -157,7 +157,7 @@
 db.url=jdbc:h2:mem
 %prod.db.url=jdbc:oracle:thin:blahblah
     </code></pre>
-    <p>Localization files</p>
+    <p class="fragment">Localization files</p>
   </section>
 
   <section>
@@ -168,25 +168,25 @@ db.url=jdbc:h2:mem
   <section>
     <p>Async support</p>
     <pre><code>await(WS.url("http://blah").getAsync())</code></pre>
-    <p>Returns thread to the pool</p>
-    <p>Serves all static files asynchronously</p>
-    <p>But, hard to call DB stored procedures that way</p>
+    <p class="fragment">Returns thread to the pool</p>
+    <p class="fragment">Serves all static files asynchronously</p>
+    <p class="fragment">But, hard to call DB stored procedures that way</p>
   </section>
 
   <section>
     <h3>Sessions</h3>
-    <p>Signed cookies</p>
-    <p>String-only up to 4kb</p>
-    <p>Stateless</p>
-    <p>Deployment during working hours!</p>
-    <p>Better back button support</p>
-    <p>+ Flash</p>
+    <p class="fragment">Signed cookies</p>
+    <p class="fragment">String-only up to 4kb</p>
+    <p class="fragment">Stateless</p>
+    <p class="fragment">Deployment during working hours!</p>
+    <p class="fragment">Better back button support</p>
+    <p class="fragment">+ Flash</p>
   </section>
 
   <section>
     <h3>Jobs</h3>
-    <p>Deferred and recurrent payment processing</p>
-    <p>Asynchronous stuff</p>
+    <p class="fragment">Deferred and recurrent payment processing</p>
+    <p class="fragment">Asynchronous stuff</p>
     <pre><code class="java">
       new DeferredPaymentProcessor(payment).now();
     </code></pre>
@@ -200,13 +200,13 @@ db.url=jdbc:h2:mem
   <section>
     <h3>Modules</h3>
     <p>Dependency management (using ivy)</p>
-    <p>Many 3rd-party stuff</p>
-    <p>e.g. pdf, excel</p>
+    <p class="fragment">Many 3rd-party stuff</p>
+    <p class="fragment">e.g. pdf, excel</p>
   </section>
 
   <section>
     <h3>Plugins</h3>
-    <p>Most stuff can be customized/redefined</p>
+    <p class="fragment">Most stuff can be customized/redefined</p>
   </section>
 
   <section>
@@ -216,9 +216,9 @@ db.url=jdbc:h2:mem
 
 <section>
   <p>Client side vs server side templates</p>
-  <p>MVC is much easier</p>
-  <p>If needed, write modular JS/AJAX</p>
-  <p>Less for CSS</p>
+  <p class="fragment">MVC is much easier</p>
+  <p class="fragment">If needed, write modular JS/AJAX</p>
+  <p class="fragment">Less for CSS</p>
   <pre><code data-trim>
 .book {
   padding-top: @defaultPadding + 10px;
@@ -237,22 +237,22 @@ db.url=jdbc:h2:mem
 <section>
   <section>
     <h3>DB</h3>
-    <p>ActiveRecord pattern on top of JPA/Hibernate</p>
+    <p class="fragment">ActiveRecord pattern on top of JPA/Hibernate</p>
     <pre><code data-trim>
 User user = User.find("byUsername").first();
 user.lastLoginTime = now();
 user.save();
     </code></pre>
-    <p>save() must be explicit</p>
-    <p>Hibernate in JPA mode (no detached save)</p>
-    <p>@DynamicUpdate</p>
-    <p>Transaction length</p>
+    <p class="fragment">save() must be explicit</p>
+    <p class="fragment">Hibernate in JPA mode (no detached save)</p>
+    <p class="fragment">@DynamicUpdate</p>
+    <p class="fragment">Transaction length</p>
   </section>
 
   <section>
     <h3>DB migration</h3>
-    <p>Play evolutions are good</p>
-    <p>We use Liquibase (via plugin)</p>
+    <p class="fragment">Play evolutions are good</p>
+    <p class="fragment">We use Liquibase (via plugin)</p>
     <pre><code data-trim class="xml">
 &lt;changeSet id="123" author="Codeborne"&gt;
   &lt;addColumn table="books"&gt;
@@ -260,18 +260,18 @@ user.save();
   &lt;/addColumn&gt;
 &lt;/changeSet&gt;
     </code></pre>
-    <p>Support for several databases</p>
-    <p>Share most (but not all) changesets between banks</p>
+    <p class="fragment">Support for several databases</p>
+    <p class="fragment">Share most (but not all) changesets between banks</p>
   </section>
 </section>
 
 <section>
   <section>
     <h3>Services</h3>
-    <p>Necessary evil</p>
-    <p>Abstraction layer between ibank and the backend(s)</p>
-    <p>ibank -> service -> banking system</p>
-    <p>MVSC :-)</p>
+    <p class="fragment">Necessary evil</p>
+    <p class="fragment">Abstraction layer between ibank and the backend(s)</p>
+    <p class="fragment">ibank -> service -> banking system</p>
+    <p class="fragment">MVSC :-)</p>
   </section>
 
   <section>
@@ -295,52 +295,54 @@ class Demo extends Module {
   }
 }
     </code></pre>
-    <p>Services are non-abstract classes</p>
-    <p>Integrations, customizations</p>
+    <p class="fragment">Services are non-abstract classes</p>
+    <p class="fragment">Integrations, customizations</p>
   </section>
 </section>
 
 <section>
   <section>
     <h3>Integrations</h3>
-    <p>In every bank, there are plenty:</p>
+    <p class="fragment">In every bank, there are plenty:</p>
     <br>
-    <p>Core system (ABS)</p>
-    <p>Card/processing system</p>
-    <p>CRM</p>
-    <p>Forex</p>
-    <p>Customer support</p>
-    <p>Loyalty program</p>
-    <p>Partners</p>
-    <p>etc, etc, etc</p>
+    <p class="fragment">Core system (ABS)</p>
+    <p class="fragment">Card/processing system</p>
+    <p class="fragment">CRM</p>
+    <p class="fragment">Forex</p>
+    <p class="fragment">Customer support</p>
+    <p class="fragment">Loyalty program</p>
+    <p class="fragment">Partners</p>
+    <p class="fragment">etc, etc, etc</p>
   </section>
 
   <section>
     <p>More integrations - harder to be reliable</p>
-    <p>Parallel development is hard with non-agile devs</p>
+    <p class="fragment">Parallel development is hard with non-agile devs</p>
   </section>
 
   <section>
-    <p>1. We write higher-level APIs for protocols first</p>
-    <p>2. Then, implement business logic using "DSL"</p>
+    <ol>
+      <li>We write higher-level APIs for protocols first</li>
+      <li>Then, implement business logic using "DSL"</li>
+    </ol>
   </section>
 
   <section>
-    <p>SOAP client</p>
-    <pre><code>soapService.request("Cards").param("CustomerID", 123L).send();</code></pre>
-    <p>No code generation!</p>
-    <p>No problems with SOAP 1.0, 1.1, 1.2 interoperation</p>
+    <h3>SOAP client</h3>
+    <pre class="fragment"><code>soapService.request("Cards").param("CustomerID", 123L).send();</code></pre>
+    <p class="fragment">No code generation!</p>
+    <p class="fragment">No problems with SOAP 1.0, 1.1, 1.2 interoperation</p>
   </section>
 
   <section>
-    <p>Stored procedures</p>
-    <pre><code>dbService.query("get_customer", 123L);</code></pre>
+    <h3>Stored procedures</h3>
+    <pre class="fragment"><code>dbService.query("get_customer", 123L);</code></pre>
   </section>
 
   <section>
     <p>Unfortunately, many of these (over)use XML</p>
-    <p>Custom SAX-based XML parser (DOM and xpath are slow)</p>
-    <pre><code data-trim>
+    <p class="fragment">Custom SAX-based XML parser (DOM and xpath are slow)</p>
+    <pre class="fragment"><code data-trim>
 new XMLParser((path, value) -> {
   switch (path) {
     case "messages/message": message = new Message(); break;
@@ -349,8 +351,8 @@ new XMLParser((path, value) -> {
   }
 }).parse(xml);
     </code></pre>
-    <p>Template-based generation</p>
-    <pre><code data-trim>
+    <p class="fragment">Template-based generation</p>
+    <pre class="fragment"><code data-trim>
 <PAYMENT>
   <ACCT>${beneficiaryAccount}</ACCT>
   <NAME>${beneficiaryName}</NAME>
@@ -358,7 +360,7 @@ new XMLParser((path, value) -> {
   <CCY>${currency}</CCY>
 </PAYMENT>
     </code></pre>
-    <p>You can even use it for more bizarre SOAP requests :-)</p>
+    <p class="fragment">You can even use it for more bizarre SOAP requests :-)</p>
   </section>
 
   <section>
@@ -395,47 +397,47 @@ new XMLParser((path, value) -> {
 
   <section>
     <h3>Backends are slow</h3>
-    <p>Caching via interceptors</p>
-    <p>Memcached</p>
-    <p>Prefetching jobs</p>
+    <p class="fragment">Caching via interceptors</p>
+    <p class="fragment">Memcached</p>
+    <p class="fragment">Prefetching jobs</p>
   </section>
 
   <section>
     <h3>Backends can be offline</h3>
-    <p>Fault-protection</p>
-    <p>Health monitor</p>
-    <p>Temporary storage</p>
-    <p>Deferred executor jobs</p>
+    <p class="fragment">Fault-protection</p>
+    <p class="fragment">Health monitor</p>
+    <p class="fragment">Temporary storage</p>
+    <p class="fragment">Deferred executor jobs</p>
   </section>
 
   <section>
     <h3>Backends have partial data</h3>
-    <p>Merge data from multiple sources</p>
-    <p>All in the name of UX</p>
+    <p class="fragment">Merge data from multiple sources</p>
+    <p class="fragment">All in the name of UX</p>
   </section>
 </section>
 
 <section>
   <h3>Customization</h3>
-  <p>CSS first</p>
-  <p>Services</p>
-  <p>You can override any file in sub-module</p>
-  <p>You can write 100% custom code</p>
-  <p>No architectural restrictions</p>
-  <p>(besides discouraging of copy-paste)</p>
+  <p class="fragment">CSS first</p>
+  <p class="fragment">Services</p>
+  <p class="fragment">You can override any file in sub-module</p>
+  <p class="fragment">You can write 100% custom code</p>
+  <p class="fragment">No architectural restrictions</p>
+  <p class="fragment">(besides discouraging of copy-paste)</p>
 </section>
 
 <section>
   <section>
     <h2>Logging</h2>
-    <p>Most developers don't log properly</p>
+    <p class="fragment">Most developers don't log properly</p>
   </section>
 
   <section>
     <h3>Goods logs are</h3>
-    <p>Compact</p>
-    <p>Machine-readable</p>
-    <p>Completely traceable</p>
+    <p class="fragment">Compact</p>
+    <p class="fragment">Machine-readable</p>
+    <p class="fragment">Completely traceable</p>
   </section>
 
   <section>
@@ -450,11 +452,11 @@ new XMLParser((path, value) -> {
 
   <section>
     <h3>Logging tips</h3>
-    <p>Request ID / Thread ID</p>
-    <p>Durations</p>
-    <p>Java stack traces only when needed</p>
-    <p>Play: Self4J over Log4J</p>
-    <p><strong>grep/awk</strong> are your best friends</p>
+    <p class="fragment">Request ID / Thread ID</p>
+    <p class="fragment">Durations</p>
+    <p class="fragment">Java stack traces only when needed</p>
+    <p class="fragment">Play: Self4J over Log4J</p>
+    <p class="fragment"><strong>grep/awk</strong> are your best friends</p>
   </section>
 </section>
 
@@ -466,23 +468,23 @@ new XMLParser((path, value) -> {
 
   <section>
     <p>Good: testing is part of Play</p>
-    <p>Bad: Rails-style "boot-up-everything" tests</p>
-    <p>Slow + Not great for TDD</p>
+    <p class="fragment">Bad: Rails-style "boot-up-everything" tests</p>
+    <p class="fragment">Slow + Not great for TDD</p>
   </section>
 
   <section>
     <h3>Unit + UI</h3>
-    <p>1500 tests, 4-5 mins</p>
-    <p>Run all during every build</p>
-    <p>Optimizations + Parallel execution</p>
+    <p class="fragment">1500 tests, 4-5 mins</p>
+    <p class="fragment">Run all during every build</p>
+    <p class="fragment">Optimizations + Parallel execution</p>
   </section>
 
   <section>
     <h3>Unit tests</h3>
-    <p>Fast, preferred</p>
-    <p>Business logic and all special cases</p>
-    <p>Mockito helps</p>
-    <pre><code data-trim>
+    <p class="fragment">Fast, preferred</p>
+    <p class="fragment">Business logic and all special cases</p>
+    <p class="fragment">Mockito helps</p>
+    <pre class="fragment"><code data-trim>
 userService = mock(UserService.class, RETURNS_DEEP_STUBS);
 when(userService.user("bob").getFullName()).thenReturn("John");
     </code></pre>
@@ -490,42 +492,42 @@ when(userService.user("bob").getFullName()).thenReturn("John");
 
   <section>
     <h3>UI tests</h3>
-    <p>Slower, for "happy paths"</p>
-    <p>Selenide helps</p>
+    <p class="fragment">Slower, for "happy paths"</p>
+    <p class="fragment">Selenide helps</p>
     <pre><code data-trim>
 $(By.name("username")).val("bob");
 $(By.name("password")).val("secret");
 $("#login-button").click();
 $(".page.overview").should(appear);
     </code></pre>
-    <p>In-memory DB: H2</p>
-    <p>Play supports initial data via Fixtures</p>
-    <p>Restore state before each test</p>
-    <p>Demo integration</p>
+    <p class="fragment">In-memory DB: H2</p>
+    <p class="fragment">Play supports initial data via Fixtures</p>
+    <p class="fragment">Restore state before each test</p>
+    <p class="fragment">Demo integration</p>
   </section>
 </section>
 
 <section>
   <h3>Migration</h3>
-  <p>Most of our customers had previous online bank</p>
-  <p>With some users</p>
-  <p>Transition period</p>
-  <p>Continuous data migration</p>
+  <p class="fragment">Most of our customers had previous online bank</p>
+  <p class="fragment">With some users</p>
+  <p class="fragment">Transition period</p>
+  <p class="fragment">Continuous data migration</p>
 </section>
 
 <section>
   <h3>Build process</h3>
-  <p>Jenkins</p>
-  <p>Compile + unit tests + ui tests</p>
-  <p>Any green build can go to production</p>
+  <p class="fragment">Jenkins</p>
+  <p class="fragment">Compile + unit tests + ui tests</p>
+  <p class="fragment">Any green build can go to production</p>
 </section>
 
 <section>
   <h3>Deployment</h3>
-  <p>2 servers</p>
-  <p>Stateless: deployment during working hours</p>
-  <p>Simple DNS-based load balancing</p>
-  <p>No loss of sessions</p>
+  <p class="fragment">2 servers</p>
+  <p class="fragment">Stateless: deployment during working hours</p>
+  <p class="fragment">Simple DNS-based load balancing</p>
+  <p class="fragment">No loss of sessions</p>
 </section>
 
 <section>
