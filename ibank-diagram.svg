@@ -47,7 +47,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -84,14 +84,14 @@
     <text
        xml:space="preserve"
        style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="82.857155"
+       x="75.714294"
        y="640.2193"
        id="text2993"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan2995"
-         x="82.857155"
-         y="640.2193">bspb</tspan></text>
+         x="75.714294"
+         y="640.2193">bank1</tspan></text>
     <rect
        style="fill:#ff5555;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        id="rect2991-7"
@@ -102,14 +102,14 @@
     <text
        xml:space="preserve"
        style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="312.5"
-       y="639.505"
+       x="297.5"
+       y="640.2193"
        id="text2993-1"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan2995-4"
-         x="312.5"
-         y="639.505">ubrr</tspan></text>
+         x="297.5"
+         y="640.2193">bank2</tspan></text>
     <rect
        style="fill:#ffdd55;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        id="rect2991-7-8"
@@ -120,14 +120,14 @@
     <text
        xml:space="preserve"
        style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="546.78571"
-       y="639.50507"
+       x="520.35712"
+       y="640.93365"
        id="text2993-1-1"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan2995-4-3"
-         x="546.78571"
-         y="639.50507">etc</tspan></text>
+         x="520.35712"
+         y="640.93365">bank3</tspan></text>
     <rect
        style="fill:#87de87;fill-rule:evenodd;stroke:#000000;stroke-width:1.14489675px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        id="rect3045"
