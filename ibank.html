@@ -382,10 +382,15 @@ new XMLParser((path, value) -> {
 
   <section>
     <h3>"Standard" Rest API</h3>
-    <p>Alternative inverse integration</p>
-    <p>(Bank implements our spec)</p>
-    <p>Automated testing tool with warnings and errors</p>
-    <p>Hard to make changes in the spec</p>
+    <p class="fragment">Alternative inverse integration</p>
+    <p class="fragment">(Bank implements our spec)</p>
+    <pre class="fragment"><code>
+      GET /customers/123
+      GET /customers/123/accounts
+      GET /customers/123/accounts/123123123123/transactions
+    </code></pre>
+    <p class="fragment">Automated testing tool with warnings and errors</p>
+    <p class="fragment">Hard to make changes in the spec</p>
   </section>
 </section>
 
@@ -403,6 +408,8 @@ new XMLParser((path, value) -> {
 
   <section>
     <h3>Backends can be offline</h3>
+    <p>Fault-protection</p>
+    <p>Health monitor</p>
     <p>Temporary storage</p>
     <p>Deferred executor jobs</p>
   </section>
