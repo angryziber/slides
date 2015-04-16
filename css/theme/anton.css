@@ -216,6 +216,10 @@ body {
   -o-transition: all .2s linear;
   transition: all .2s linear; }
 
+.reveal section img.no-border {
+  background: transparent;
+  border: none;  }
+
 .reveal a:hover img {
   background: rgba(255, 255, 255, 0.2);
   border-color: #13daec;
