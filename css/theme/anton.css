@@ -57,7 +57,8 @@ body {
 .reveal h2 strong,
 .reveal h3 strong,
 .reveal h4 strong,
-.reveal .strong {
+.reveal .strong,
+.reveal em {
   color: #ff880f;
   font-weight: normal;
 }
@@ -76,9 +77,6 @@ body {
 
 .reveal strong, .reveal b {
   font-weight: bold; }
-
-.reveal em {
-  font-style: italic; }
 
 .reveal ol, .reveal dl, .reveal ul {
   display: inline-block;
