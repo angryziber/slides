@@ -368,11 +368,30 @@ new XMLParser((path, value) -> {
   </section>
 
   <section>
-    <p>TDI: (Unit-)Test Driven Integration</p>
+    <h2>TDI</h2>
+    <p>(Unit-)Test Driven Integration</p>
+    <p class="fragment">Almost like TDD</p>
+    <br>
+    <ol>
+      <li class="fragment">Call a real service (black box)</li>
+      <li class="fragment">Save the response</li>
+      <li class="fragment">Write a test for parsing of it</li>
+      <li class="fragment">Write code to make test pass</li>
+    </ol>
   </section>
 
   <section>
-    "Standard" Rest API support out of the box
+    <h3>"Standard" Rest API</h3>
+    <p>Alternative inverse integration</p>
+    <p>(Bank implements our spec)</p>
+    <p>Automated testing tool with warnings and errors</p>
+    <p>Hard to make changes in the spec</p>
+  </section>
+</section>
+
+<section>
+  <section>
+    <h2>Problems with backends</h2>
   </section>
 
   <section>
@@ -390,7 +409,7 @@ new XMLParser((path, value) -> {
 
   <section>
     <h3>Backends have partial data</h3>
-    <p>We need to merge data from multiple sources</p>
+    <p>Merge data from multiple sources</p>
     <p>All in the name of UX</p>
   </section>
 </section>
