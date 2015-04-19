@@ -118,7 +118,7 @@
   <section>
     <h3>Play framework</h3>
     <p class="fragment">Rails, Django inspired</p>
-    <p class="fragment">We use newly-released <em>v1.3</em></p>
+    <p class="fragment">We use newly-released v<em>1.3</em></p>
     <p class="fragment">not <em>2.x</em>, which is for Scala</p>
   </section>
 
@@ -163,6 +163,16 @@ db.url=jdbc:h2:mem
   </section>
 
   <section>
+    <h3>Sessions</h3>
+    <p class="fragment">Signed cookies</p>
+    <p class="fragment">String-only up to 4kb</p>
+    <p class="fragment">No server state</p>
+    <p class="fragment">Deployment during working hours!</p>
+    <p class="fragment">Better back button support</p>
+    <p class="fragment">+ Flash</p>
+  </section>
+
+  <section>
     <p>Async support</p>
     <pre><code>await(WS.url("http://blah").getAsync())</code></pre>
     <p class="fragment">Returns thread to the pool</p>
@@ -171,19 +181,10 @@ db.url=jdbc:h2:mem
   </section>
 
   <section>
-    <h3>Sessions</h3>
-    <p class="fragment">Signed cookies</p>
-    <p class="fragment">String-only up to 4kb</p>
-    <p class="fragment">Stateless</p>
-    <p class="fragment">Deployment during working hours!</p>
-    <p class="fragment">Better back button support</p>
-    <p class="fragment">+ Flash</p>
-  </section>
-
-  <section>
     <h3>Jobs</h3>
-    <p class="fragment">Deferred and recurrent payment processing</p>
-    <p class="fragment">Asynchronous stuff</p>
+    <p class="fragment">For asynchronous stuff</p>
+    <p class="fragment">And processing (e.g. deferred and recurrent payments)</p>
+    <br>
     <pre class="fragment"><code class="java" data-trim>
       new DeferredPaymentProcessor(payment).now();
     </code></pre>
@@ -196,10 +197,9 @@ public class DeferredPaymentProcessor extends Job { ... }
 
   <section>
     <h3>Modules</h3>
-    <p>Dependency management (uses <em>ivy</em>)</p>
-    <p class="fragment">Many 3rd-party stuff</p>
-    <p class="fragment">e.g. pdf, excel</p>
-    <p class="fragment">We use a lot</p>
+    <p>Dependency management (using <em>ivy</em>)</p>
+    <p class="fragment">Many 3rd-party ones (e.g. pdf, excel)</p>
+    <p class="fragment">And we write <a href="http://github.com/codeborne">our own</a> (logging, testing, cms)</p>
   </section>
 
   <section>
