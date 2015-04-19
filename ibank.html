@@ -218,16 +218,17 @@ public class DeferredPaymentProcessor extends Job { ... }
 </section>
 
 <section>
-  <p>Client side vs server side templates</p>
-  <p class="fragment">MVC is much easier</p>
+  <h3>Client side</h3>
+  <p class="fragment">MVC is much easier than single-page apps</p>
   <p class="fragment">If needed, write modular JS/AJAX</p>
-  <p class="fragment">Less for CSS</p>
-  <pre class="fragment"><code data-trim>
+  <p class="fragment">Less & Autoprefixer for CSS</p>
+  <pre class="fragment"><code data-trim class="css">
 .book {
   padding-top: @defaultPadding + 10px;
 
   .title {
     font-weight: bold;
+    transform: scale(1.2);
   }
 }
   </code></pre>
