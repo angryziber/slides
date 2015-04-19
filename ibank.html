@@ -250,22 +250,22 @@ user.save();
     <p class="fragment">save() must be explicit</p>
     <p class="fragment">Hibernate in JPA mode (no detached save)</p>
     <p class="fragment">@DynamicUpdate</p>
-    <p class="fragment">Transaction length</p>
+    <!--<p class="fragment">Transaction length</p>-->
   </section>
 
   <section>
     <h3>DB migration</h3>
-    <p class="fragment">Play evolutions are good</p>
-    <p class="fragment">We use Liquibase (via plugin)</p>
+    <p class="fragment"><em>Play evolutions</em> are good</p>
+    <p class="fragment">We use <em>Liquibase</em> (via plugin)</p>
     <pre class="fragment"><code data-trim class="xml">
 &lt;changeSet id="123" author="Codeborne"&gt;
-  &lt;addColumn table="books"&gt;
-    &lt;column name="pages" type="number"/&gt;
+  &lt;addColumn table="users"&gt;
+    &lt;column name="lastLoginAt" type="timestamp"/&gt;
   &lt;/addColumn&gt;
 &lt;/changeSet&gt;
     </code></pre>
-    <p class="fragment">Support for several databases</p>
-    <p class="fragment">Share most (but not all) changesets between banks</p>
+    <p class="fragment">Supports almost any database</p>
+    <p class="fragment">We share most (but not all) changesets between banks</p>
     <p class="fragment">Changesets must be backwards-compatible</p>
   </section>
 </section>
@@ -274,9 +274,9 @@ user.save();
   <section>
     <h3>Services</h3>
     <p class="fragment">Necessary evil</p>
-    <p class="fragment">Abstraction layer between ibank and the backend(s)</p>
+    <p class="fragment">Abstraction layer between <em>ibank</em> and the backend(s)</p>
     <p class="fragment">ibank -> service -> banking system</p>
-    <p class="fragment">MVSC :-)</p>
+    <p class="fragment">MVC -> MVSC :-)</p>
   </section>
 
   <section>
@@ -326,9 +326,10 @@ class Demo extends Module {
   </section>
 
   <section>
+    <h3>How do we do it?</h3>
     <ol>
-      <li>We write higher-level APIs for protocols first</li>
-      <li>Then, implement business logic using "DSL"</li>
+      <li class="fragment">We write higher-level APIs for protocols first</li>
+      <li class="fragment">Then implement business logic using a "DSL"</li>
     </ol>
   </section>
 
@@ -346,7 +347,7 @@ class Demo extends Module {
 
   <section>
     <p>Unfortunately, many of these (over)use XML</p>
-    <p class="fragment">Custom SAX-based XML parser (DOM and xpath are slow)</p>
+    <p class="fragment">DOM and xpath are slow: custom SAX-based XML parser</p>
     <pre class="fragment"><code data-trim>
 new XMLParser((path, value) -> {
   switch (path) {
@@ -402,7 +403,8 @@ new XMLParser((path, value) -> {
 
   <section>
     <h3>Backends are slow</h3>
-    <p class="fragment">Caching via interceptors</p>
+    <p class="fragment">Caching via Guice interceptors</p>
+    <pre><code data-trim class="fragment">bindInterceptor(any(), annotatedWith(CacheFor.class), this);</code></pre>
     <p class="fragment">Memcached</p>
     <p class="fragment">Prefetching jobs</p>
   </section>
@@ -439,7 +441,7 @@ new XMLParser((path, value) -> {
   </section>
 
   <section>
-    <h3>Goods logs are</h3>
+    <h3>Good logs are</h3>
     <p class="fragment">Compact</p>
     <p class="fragment">Machine-readable</p>
     <p class="fragment">Completely traceable</p>
@@ -499,7 +501,7 @@ when(userService.user("bob").getFullName()).thenReturn("John");
     <h3>UI tests</h3>
     <p class="fragment">Slower, for "happy paths"</p>
     <p class="fragment">Selenide helps</p>
-    <pre><code data-trim>
+    <pre class="fragment"><code data-trim>
 $(By.name("username")).val("bob");
 $(By.name("password")).val("secret");
 $("#login-button").click();
