@@ -309,7 +309,6 @@ class Demo extends Module {
   <section>
     <h3>Integrations</h3>
     <p class="fragment">In every bank, there are plenty:</p>
-    <br>
     <p class="fragment">Core system (ABS)</p>
     <p class="fragment">Card/processing system</p>
     <p class="fragment">CRM</p>
@@ -329,7 +328,7 @@ class Demo extends Module {
     <h3>How do we do it?</h3>
     <ol>
       <li class="fragment">We write higher-level APIs for protocols first</li>
-      <li class="fragment">Then implement business logic using a "DSL"</li>
+      <li class="fragment">Then implement business logic using a this API/DSL</li>
     </ol>
   </section>
 
@@ -386,10 +385,10 @@ new XMLParser((path, value) -> {
     <h3>"Standard" Rest API</h3>
     <p class="fragment">Alternative inverse integration</p>
     <p class="fragment">(Bank implements our spec)</p>
-    <pre class="fragment"><code>
-      GET /customers/123
-      GET /customers/123/accounts
-      GET /customers/123/accounts/123123123123/transactions
+    <pre class="fragment"><code data-trim>
+GET /customers/123
+GET /customers/123/accounts
+GET /customers/123/accounts/123123123123/transactions
     </code></pre>
     <p class="fragment">Automated testing tool with warnings and errors</p>
     <p class="fragment">Hard to make changes in the spec</p>
