@@ -175,8 +175,9 @@ db.url=jdbc:h2:mem
 
   <section>
     <p>Async support</p>
+    <p>Inspired by Node.js</p>
     <pre><code>await(WS.url("http://blah").getAsync())</code></pre>
-    <p class="fragment">Returns thread to the pool</p>
+    <p class="fragment">Returns request thread to the pool</p>
     <p class="fragment">Serves all static files asynchronously</p>
     <p class="fragment">But, hard to call DB stored procedures that way</p>
   </section>
